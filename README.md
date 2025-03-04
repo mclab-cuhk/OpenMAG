@@ -143,6 +143,8 @@ Gateway: 10.1.1.254
     vim /etc/openvpn/server.conf
     ```
 
+    Make sure those lines are avaliable
+
     ```
     local 10.1.1.100
     port 52115
@@ -191,6 +193,8 @@ Edit `/etc/openvpn/client.conf`:
     vim /etc/openvpn/client.conf
     ```
 
+    Make sure those lines are avaliable
+
     ```
     client
     dev tun
@@ -225,7 +229,7 @@ ip route replace 10.1.1.100/32 metric 1 nexthop via 10.1.2.254 dev enp1s0f0 weig
 **Setup multipath**
 
 ```bash
-ip mptcp limits set subflow 8 add_addr_accepted 8
+ip mptcp limits set subflow 2 add_addr_accepted 2
 
 ip rule add from 10.1.2.100 table 1
 ip rule add from 10.1.3.100 table 2
