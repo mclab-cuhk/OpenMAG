@@ -189,29 +189,29 @@ Gateway: 10.1.3.254
 
 Edit `/etc/openvpn/client.conf`:
 
-    ```bash
-    vim /etc/openvpn/client.conf
-    ```
+```bash
+vim /etc/openvpn/client.conf
+```
 
-    Make sure those lines are avaliable
+Make sure those lines are avaliable
 
-    ```
-    client
-    dev tun
-    proto tcp
-    remote 10.1.1.100 52115
-    ca ca.crt
-    cert client.crt
-    key client.key
-    resolv-retry infinite
-    nobind
-    user nobody
-    group nogroup
-    persist-key
-    persist-tun
-    status /var/log/openvpn/openvpn-status.log
-    verb 3
-    ```
+```
+client
+dev tun
+proto tcp
+remote 10.1.1.100 52115
+ca ca.crt
+cert client.crt
+key client.key
+resolv-retry infinite
+nobind
+user nobody
+group nogroup
+persist-key
+persist-tun
+status /var/log/openvpn/openvpn-status.log
+verb 3
+```
 
 **Sysctl and iptables:**
 
