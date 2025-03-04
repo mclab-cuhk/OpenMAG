@@ -1,0 +1,6 @@
+[submodule "mptcp"]
+	path = mptcp
+	url = git@github.com:multipath-tcp/mptcp_net-next.git
+[submodule "openvpn"]
+	path = openvpn
+	url = git@github.com:OpenVPN/openvpn.git
