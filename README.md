@@ -92,14 +92,148 @@ As kernel 6.8.x has applied openssl 3.x, the openvpn version must be above 2.6.8
 
     ```bash
     autoreconf -i -v -f
+
     ./configure
+
     make && make install
     ```
 
 ## Configuration
 
+### Remote GW Configuration
 
+IP Address 1: 10.1.1.100
 
+Gateway: 10.1.1.254
+
+**Key and Crt files:**
+
+1.  Generate certificates:
+
+    ```bash
+    cd /etc/openvpn
+    ln -s /usr/share/easy-rsa easy-rsa
+    cd easy-rsa
+    ./easyrsa init-pki
+    ./easyrsa build-ca nopass
+    ./easyrsa gen-req server nopass
+    ./easyrsa gen-req client nopass
+    ./easyrsa sign-req server server
+    ./easyrsa sign-req client client
+    cp pki/ca.crt /etc/openvpn/
+    cp pki/issued/server.crt /etc/openvpn/
+    cp pki/private/server.key /etc/openvpn/
+    ```
+
+2.  Copy certificates to Local GW:
+
+    Copy `ca.crt`, `client.key`, `client.crt` to the local gw: `/etc/openvpn/`
+
+**Openvpn Server configuration:**
+
+1.  Copy `dh2048.pem`:
+
+    ```bash
+    cp /usr/share/doc/openvpn/examples/sample-keys/dh2048.pem /etc/openvpn/
+    ```
+
+2.  Edit `/etc/openvpn/server.conf`:
+
+    ```bash
+    vim /etc/openvpn/server.conf
+    ```
+
+    ```
+    local 10.1.1.100
+    port 52115
+    dev tun
+    ca ca.crt
+    cert server.crt
+    key server.key
+    dh dh2048.pem
+    server 10.8.0.0 255.255.255.0
+    ifconfig-pool-persist /var/log/openvpn/ipp.txt
+    push "route 10.1.1.0 255.255.255.0"
+    keepalive 10 120
+    user nobody
+    group nogroup
+    persist-key
+    persist-tun
+    status /var/log/openvpn/openvpn-status.log
+    verb 3
+    tun-mtu 1400
+    mssfix 1360
+    ```
+
+**Sysctl and iptables:**
+
+```bash
+sysctl -w net.ipv4.ip_forward=1
+##enp1s0f0 is the interface with IP 10.1.1.100
+iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o enp1s0f0 -j MASQUERADE
+```
+
+### Local Gw Configuration
+
+IP Address 1: 30.1.2.100
+
+Gateway: 30.1.2.254
+
+IP Address 2: 30.1.3.100
+
+Gateway: 30.1.3.254
+
+**Openvpn Client configuration:**
+
+1.  Edit `/etc/openvpn/client.conf`:
+
+    ```bash
+    vim /etc/openvpn/client.conf
+    ```
+
+    ```
+    client
+    dev tun
+    proto tcp
+    remote 10.1.1.100 52115
+    ca ca.crt
+    cert client.crt
+    key client.key
+    resolv-retry infinite
+    nobind
+    user nobody
+    group nogroup
+    persist-key
+    persist-tun
+    status /var/log/openvpn/openvpn-status.log
+    verb 3
+    ```
+
+**Sysctl and iptables:**
+
+```bash
+sysctl -w net.ipv4.ip_forward=1
+## enp0s31f6 is the interface connected with public network 192.168.10.x
+iptables -t nat -A POSTROUTING -o enp0s31f6 -s 10.8.0.0/24 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o tun0 -j MASQUERADE
+ip route add 30.1.1.100/32 via 10.1.2.254 dev enp3s0f0 metric 1
+ip route add default via 10.1.2.254 dev enp3s0f0 metric 9
+ip route add default via 10.1.3.254 dev enp3s0f1 metric 10
+ip route replace 10.1.1.100/32 metric 1 nexthop via 10.1.2.254 dev enp1s0f0 weight 1  nexthop via 10.1.3.254 dev enp1s0f1 weight 1
+```
+
+**Setup multipath**
+
+```bash
+ip mptcp limits set subflow 8 add_addr_accepted 8
+
+ip rule add from 30.1.2.100 table 1
+ip rule add from 30.1.3.100 table 2
+ip mptcp endpoint flush
+ip mptcp endpoint add 30.1.2.100 dev enp1s0f0 subflow
+ip mptcp endpoint add 30.1.3.100 dev enp1s0f1 subflow
+ip mptcp endpoint show
+```
 
 ## Usage
 
