@@ -1,5 +1,5 @@
 # OpenMAG
-Open Mobile Aggregation Gateway
+Open Mobile Aggregation Gateway, which is a method to setup the multipath aggregation gateway based on general Linux Kernel.
 
 ## Prerequisites
 
@@ -175,17 +175,17 @@ iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o enp1s0f0 -j MASQUERADE
 
 ### Local Gw Configuration
 
-IP Address 1: 30.1.2.100
+IP Address 1: 10.1.2.100
 
-Gateway: 30.1.2.254
+Gateway: 10.1.2.254
 
-IP Address 2: 30.1.3.100
+IP Address 2: 10.1.3.100
 
-Gateway: 30.1.3.254
+Gateway: 10.1.3.254
 
 **Openvpn Client configuration:**
 
-1.  Edit `/etc/openvpn/client.conf`:
+Edit `/etc/openvpn/client.conf`:
 
     ```bash
     vim /etc/openvpn/client.conf
@@ -227,14 +227,36 @@ ip route replace 10.1.1.100/32 metric 1 nexthop via 10.1.2.254 dev enp1s0f0 weig
 ```bash
 ip mptcp limits set subflow 8 add_addr_accepted 8
 
-ip rule add from 30.1.2.100 table 1
-ip rule add from 30.1.3.100 table 2
+ip rule add from 10.1.2.100 table 1
+ip rule add from 10.1.3.100 table 2
 ip mptcp endpoint flush
-ip mptcp endpoint add 30.1.2.100 dev enp1s0f0 subflow
-ip mptcp endpoint add 30.1.3.100 dev enp1s0f1 subflow
+ip mptcp endpoint add 10.1.2.100 dev enp1s0f0 subflow
+ip mptcp endpoint add 10.1.3.100 dev enp1s0f1 subflow
 ip mptcp endpoint show
 ```
 
-## Usage
+## Run Openvpn with multipath
 
 Examples of how to use the project.
+
+### Remote GW
+
+```bash
+cd /etc/openvpn
+mptcpize run openvpn --config server.conf
+iperf3 -s
+```
+
+### Local GW
+
+```bash
+cd /etc/openvpn
+mptcpize run openvpn --config client.conf
+iperf3 -c 10.1.1.200 -R
+```
+
+Use nload tool to show the multipath traffic from two interfaces
+```bash
+nload -m
+```
+
