@@ -1,0 +1,1474 @@
+26342 execve("./uixshm", ["./uixshm", "-mode=client", "-host=30.1.1.100", "-v=1"], 0x7ffc730e6e40 /* 26 vars */) = 0
+26342 brk(NULL)                         = 0x645ef3bf9000
+26342 arch_prctl(0x3001 /* ARCH_??? */, 0x7ffe47e067d0) = -1 EINVAL (Invalid argument)
+26342 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b229384c000
+26342 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/glibc-hwcaps/x86-64-v3/libshm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/shm/shm/lib/glibc-hwcaps/x86-64-v3", 0x7ffe47e059f0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/glibc-hwcaps/x86-64-v2/libshm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/shm/shm/lib/glibc-hwcaps/x86-64-v2", 0x7ffe47e059f0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/tls/haswell/x86_64/libshm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/shm/shm/lib/tls/haswell/x86_64", 0x7ffe47e059f0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/tls/haswell/libshm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/shm/shm/lib/tls/haswell", 0x7ffe47e059f0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/tls/x86_64/libshm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/shm/shm/lib/tls/x86_64", 0x7ffe47e059f0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/tls/libshm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/shm/shm/lib/tls", 0x7ffe47e059f0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/haswell/x86_64/libshm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/shm/shm/lib/haswell/x86_64", 0x7ffe47e059f0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/haswell/libshm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/shm/shm/lib/haswell", 0x7ffe47e059f0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/x86_64/libshm.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/shm/shm/lib/x86_64", 0x7ffe47e059f0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libshm.so", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=48568, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 57768, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b229383d000
+26342 mmap(0x7b229383f000, 16384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7b229383f000
+26342 mmap(0x7b2293843000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6000) = 0x7b2293843000
+26342 mmap(0x7b2293844000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6000) = 0x7b2293844000
+26342 mmap(0x7b2293846000, 20904, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b2293846000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/glibc-hwcaps/x86-64-v3/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/usr/local/lib/glibc-hwcaps/x86-64-v3", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/glibc-hwcaps/x86-64-v2/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/usr/local/lib/glibc-hwcaps/x86-64-v2", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/tls/haswell/x86_64/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/usr/local/lib/tls/haswell/x86_64", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/tls/haswell/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/usr/local/lib/tls/haswell", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/tls/x86_64/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/usr/local/lib/tls/x86_64", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/tls/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/usr/local/lib/tls", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/haswell/x86_64/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/usr/local/lib/haswell/x86_64", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/haswell/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/usr/local/lib/haswell", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/x86_64/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/usr/local/lib/x86_64", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/usr/local/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/glibc-hwcaps/x86-64-v3/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/glibc-hwcaps/x86-64-v3", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/glibc-hwcaps/x86-64-v2/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/glibc-hwcaps/x86-64-v2", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/tls/haswell/x86_64/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/tls/haswell/x86_64", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/tls/haswell/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/tls/haswell", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/tls/x86_64/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/tls/x86_64", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/tls/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/tls", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/haswell/x86_64/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/haswell/x86_64", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/haswell/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/haswell", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/x86_64/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/x86_64", 0x7ffe47e059d0, 0) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 newfstatat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+26342 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=81124, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 81124, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7b2293829000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`Y\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=162808, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 165768, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b2293800000
+26342 mmap(0x7b2293805000, 118784, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7b2293805000
+26342 mmap(0x7b2293822000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x22000) = 0x7b2293822000
+26342 mmap(0x7b2293827000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7b2293827000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libboost_context.so.1.74.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libboost_context.so.1.74.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libboost_context.so.1.74.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libboost_context.so.1.74.0", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=14192, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 16464, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b22937fb000
+26342 mmap(0x7b22937fc000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7b22937fc000
+26342 mmap(0x7b22937fd000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7b22937fd000
+26342 mmap(0x7b22937fe000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7b22937fe000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libdouble-conversion.so.3", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libdouble-conversion.so.3", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libdouble-conversion.so.3", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdouble-conversion.so.3", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=79952, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 82080, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b22937e6000
+26342 mprotect(0x7b22937e8000, 69632, PROT_NONE) = 0
+26342 mmap(0x7b22937e8000, 45056, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7b22937e8000
+26342 mmap(0x7b22937f3000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xd000) = 0x7b22937f3000
+26342 mmap(0x7b22937f9000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x12000) = 0x7b22937f9000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libevent-2.1.so.7", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libevent-2.1.so.7", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libevent-2.1.so.7", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libevent-2.1.so.7", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=338480, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 342344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b2293792000
+26342 mprotect(0x7b229379e000, 286720, PROT_NONE) = 0
+26342 mmap(0x7b229379e000, 204800, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xc000) = 0x7b229379e000
+26342 mmap(0x7b22937d0000, 77824, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3e000) = 0x7b22937d0000
+26342 mmap(0x7b22937e4000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x51000) = 0x7b22937e4000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libz.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libz.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libz.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=108936, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b2293790000
+26342 mmap(NULL, 110776, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b2293774000
+26342 mprotect(0x7b2293776000, 98304, PROT_NONE) = 0
+26342 mmap(0x7b2293776000, 69632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7b2293776000
+26342 mmap(0x7b2293787000, 24576, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13000) = 0x7b2293787000
+26342 mmap(0x7b229378e000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19000) = 0x7b229378e000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libsodium.so.23", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libsodium.so.23", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libsodium.so.23", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libsodium.so.23", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=355040, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 357440, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b229371c000
+26342 mprotect(0x7b2293728000, 303104, PROT_NONE) = 0
+26342 mmap(0x7b2293728000, 229376, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xc000) = 0x7b2293728000
+26342 mmap(0x7b2293760000, 69632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x44000) = 0x7b2293760000
+26342 mmap(0x7b2293772000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x55000) = 0x7b2293772000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libunwind.so.8", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libunwind.so.8", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libunwind.so.8", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libunwind.so.8", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=63744, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 109264, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b2293701000
+26342 mmap(0x7b2293703000, 40960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7b2293703000
+26342 mmap(0x7b229370d000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xc000) = 0x7b229370d000
+26342 mmap(0x7b2293710000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7b2293710000
+26342 mmap(0x7b2293712000, 39632, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b2293712000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libglog.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libglog.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libglog.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libglog.so.0", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@\216\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=146776, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 215016, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b22936cc000
+26342 mprotect(0x7b22936d4000, 110592, PROT_NONE) = 0
+26342 mmap(0x7b22936d4000, 86016, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8000) = 0x7b22936d4000
+26342 mmap(0x7b22936e9000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d000) = 0x7b22936e9000
+26342 mmap(0x7b22936ef000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x22000) = 0x7b22936ef000
+26342 mmap(0x7b22936f1000, 63464, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b22936f1000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libcrypto.so.3", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libcrypto.so.3", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libcrypto.so.3", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcrypto.so.3", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=4455728, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 4469952, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b2293200000
+26342 mmap(0x7b22932b2000, 2486272, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb2000) = 0x7b22932b2000
+26342 mmap(0x7b2293511000, 860160, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x311000) = 0x7b2293511000
+26342 mmap(0x7b22935e3000, 385024, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3e2000) = 0x7b22935e3000
+26342 mmap(0x7b2293641000, 9408, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b2293641000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libzstd.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libzstd.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libzstd.so.1", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=6624136, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 883368, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b2293128000
+26342 mmap(0x7b2293134000, 737280, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xc000) = 0x7b2293134000
+26342 mmap(0x7b22931e8000, 90112, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xc0000) = 0x7b22931e8000
+26342 mmap(0x7b22931fe000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xd5000) = 0x7b22931fe000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2260296, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b22936ca000
+26342 mmap(NULL, 2275520, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b2292e00000
+26342 mprotect(0x7b2292e9a000, 1576960, PROT_NONE) = 0
+26342 mmap(0x7b2292e9a000, 1118208, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9a000) = 0x7b2292e9a000
+26342 mmap(0x7b2292fab000, 454656, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ab000) = 0x7b2292fab000
+26342 mmap(0x7b229301b000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x21a000) = 0x7b229301b000
+26342 mmap(0x7b2293029000, 10432, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b2293029000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=940560, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 942344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b2293041000
+26342 mmap(0x7b229304f000, 507904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7b229304f000
+26342 mmap(0x7b22930cb000, 372736, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8a000) = 0x7b22930cb000
+26342 mmap(0x7b2293126000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe4000) = 0x7b2293126000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 127720, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b22936aa000
+26342 mmap(0x7b22936ad000, 94208, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7b22936ad000
+26342 mmap(0x7b22936c4000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a000) = 0x7b22936c4000
+26342 mmap(0x7b22936c8000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d000) = 0x7b22936c8000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/home/emma/shm/shm/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/usr/local/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/home/emma/mvfst/_build/deps/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+26342 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+26342 pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+26342 pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\325\31p\226\367\t\200\30)\261\30\257\33|\366c"..., 68, 896) = 68
+26342 newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+26342 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+26342 mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b2292a00000
+26342 mprotect(0x7b2292a28000, 2023424, PROT_NONE) = 0
+26342 mmap(0x7b2292a28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7b2292a28000
+26342 mmap(0x7b2292bbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7b2292bbd000
+26342 mmap(0x7b2292c16000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 0x7b2292c16000
+26342 mmap(0x7b2292c1c000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b2292c1c000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=21448, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 16424, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b22936a5000
+26342 mmap(0x7b22936a6000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7b22936a6000
+26342 mmap(0x7b22936a7000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7b22936a7000
+26342 mmap(0x7b22936a8000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7b22936a8000
+26342 close(3)                          = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/liblzma.so.5", O_RDONLY|O_CLOEXEC) = 3
+26342 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=170456, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b22936a3000
+26342 mmap(NULL, 172296, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b2293678000
+26342 mmap(0x7b229367b000, 110592, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7b229367b000
+26342 mmap(0x7b2293696000, 45056, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e000) = 0x7b2293696000
+26342 mmap(0x7b22936a1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7b22936a1000
+26342 close(3)                          = 0
+26342 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b2293676000
+26342 mmap(NULL, 40960, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b229366c000
+26342 arch_prctl(ARCH_SET_FS, 0x7b2293674240) = 0
+26342 set_tid_address(0x7b2293674510)   = 26342
+26342 set_robust_list(0x7b2293674520, 24) = 0
+26342 rseq(0x7b2293674be0, 0x20, 0, 0x53053053) = 0
+26342 mprotect(0x7b2292c16000, 16384, PROT_READ) = 0
+26342 mprotect(0x7b22936a1000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b22936a8000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b22936c8000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b2293126000, 4096, PROT_READ) = 0
+26342 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b229366a000
+26342 mprotect(0x7b229301b000, 45056, PROT_READ) = 0
+26342 mprotect(0x7b22931fe000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b22935e3000, 372736, PROT_READ) = 0
+26342 mprotect(0x7b2293710000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b2293827000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b22936ef000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b2293772000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b229378e000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b22937e4000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b22937f9000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b22937fe000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b2293844000, 4096, PROT_READ) = 0
+26342 mprotect(0x645ec142d000, 180224, PROT_READ) = 0
+26342 mprotect(0x7b2293886000, 8192, PROT_READ) = 0
+26342 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+26342 munmap(0x7b2293829000, 81124)     = 0
+26342 getrandom("\x0c\xff\xd1\xb9\xe6\xa4\xa9\xab", 8, GRND_NONBLOCK) = 8
+26342 brk(NULL)                         = 0x645ef3bf9000
+26342 brk(0x645ef3c1a000)               = 0x645ef3c1a000
+26342 futex(0x7b229302977c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26342 getpid()                          = 26342
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+26342 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b2293885000
+26342 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b229383c000
+26342 close(-1)                         = -1 EBADF (Bad file descriptor)
+26342 close(-1)                         = -1 EBADF (Bad file descriptor)
+26342 pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0
+26342 mincore(0x7ffe47e05000, 4096, [1]) = 0
+26342 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+26342 mincore(0x7ffe47e06000, 4096, [1]) = 0
+26342 read(3, 0x7ffe47e05b15, 1)        = -1 EAGAIN (Resource temporarily unavailable)
+26342 write(4, "p", 1)                  = 1
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+26342 mincore(0x7b229386e000, 4096, [1]) = 0
+26342 read(3, "p", 1)                   = 1
+26342 write(4, "\300", 1)               = 1
+26342 mmap(NULL, 32, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b229383b000
+26342 mmap(NULL, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b229382b000
+26342 openat(AT_FDCWD, "/proc/cpuinfo", O_RDONLY) = 5
+26342 read(5, "processor\t: 0\nvendor_id\t: Genuin"..., 8191) = 3127
+26342 read(5, "processor\t: 2\nvendor_id\t: Genuin"..., 8191) = 3126
+26342 read(5, "processor\t: 4\nvendor_id\t: Genuin"..., 8191) = 3130
+26342 read(5, "processor\t: 6\nvendor_id\t: Genuin"..., 8191) = 3132
+26342 read(5, "processor\t: 8\nvendor_id\t: Genuin"..., 8191) = 3126
+26342 read(5, "processor\t: 10\nvendor_id\t: Genui"..., 8191) = 3129
+26342 brk(0x645ef3c3b000)               = 0x645ef3c3b000
+26342 read(5, "processor\t: 12\nvendor_id\t: Genui"..., 8191) = 3130
+26342 read(5, "processor\t: 14\nvendor_id\t: Genui"..., 8191) = 3132
+26342 read(5, "", 8191)                 = 0
+26342 close(5)                          = 0
+26342 brk(0x645ef3c38000)               = 0x645ef3c38000
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], ~[KILL STOP RTMIN RT_1], 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+26342 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+26342 sigaltstack(NULL, {ss_sp=NULL, ss_flags=SS_DISABLE, ss_size=0}) = 0
+26342 ioctl(2, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+26342 rt_sigaction(SIGSEGV, {sa_handler=0x645ec12b96e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7b2292a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+26342 rt_sigaction(SIGILL, {sa_handler=0x645ec12b96e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7b2292a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+26342 rt_sigaction(SIGFPE, {sa_handler=0x645ec12b96e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7b2292a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+26342 rt_sigaction(SIGABRT, {sa_handler=0x645ec12b96e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7b2292a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+26342 rt_sigaction(SIGBUS, {sa_handler=0x645ec12b96e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7b2292a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+26342 rt_sigaction(SIGTERM, {sa_handler=0x645ec12b96e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7b2292a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+26342 rt_sigaction(SIGQUIT, {sa_handler=0x645ec12b96e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7b2292a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+26342 getrandom("\x18\xb2\xe1\x96\x5e\xc2\xa3\x95\xec\xa6\x19\xf6\x09\xd4\xe0\xc7", 16, 0) = 16
+26342 getrandom("\xa6\x08\x3c\xf4\xd8\x72\xa5\x5e\x94\xf4\x19\xb5\x0e\xc5\xb8\x16", 16, 0) = 16
+26342 getuid()                          = 0
+26342 geteuid()                         = 0
+26342 getgid()                          = 0
+26342 getegid()                         = 0
+26342 getuid()                          = 0
+26342 geteuid()                         = 0
+26342 getgid()                          = 0
+26342 getegid()                         = 0
+26342 epoll_create1(EPOLL_CLOEXEC)      = 5
+26342 getuid()                          = 0
+26342 geteuid()                         = 0
+26342 getgid()                          = 0
+26342 getegid()                         = 0
+26342 pipe2([6, 7], O_NONBLOCK|O_CLOEXEC) = 0
+26342 getuid()                          = 0
+26342 geteuid()                         = 0
+26342 getgid()                          = 0
+26342 getegid()                         = 0
+26342 getpid()                          = 26342
+26342 eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK) = 8
+26342 epoll_ctl(5, EPOLL_CTL_ADD, 8, {events=EPOLLIN, data={u32=8, u64=8}}) = 0
+26342 write(8, "\1\0\0\0\0\0\0\0", 8)   = 8
+26342 rt_sigaction(SIGRT_1, {sa_handler=0x7b2292a91870, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7b2292a42520}, NULL, 8) = 0
+26342 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+26342 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7b2292000000
+26342 mprotect(0x7b2292001000, 8388608, PROT_READ|PROT_WRITE) = 0
+26342 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+26342 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7b2292800910, parent_tid=0x7b2292800910, exit_signal=0, stack=0x7b2292000000, stack_size=0x7f8400, tls=0x7b2292800640} => {parent_tid=[26343]}, 88) = 26343
+26342 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+26343 rseq(0x7b2292800fe0, 0x20, 0, 0x53053053 <unfinished ...>
+26342 <... rt_sigprocmask resumed>NULL, 8) = 0
+26342 sched_yield()                     = 0
+26342 sched_yield()                     = 0
+26342 sched_yield()                     = 0
+26342 sched_yield( <unfinished ...>
+26343 <... rseq resumed>)               = 0
+26342 <... sched_yield resumed>)        = 0
+26342 sched_yield()                     = 0
+26343 set_robust_list(0x7b2292800920, 24 <unfinished ...>
+26342 sched_yield( <unfinished ...>
+26343 <... set_robust_list resumed>)    = 0
+26342 <... sched_yield resumed>)        = 0
+26343 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+26342 sched_yield( <unfinished ...>
+26343 <... rt_sigprocmask resumed>NULL, 8) = 0
+26342 <... sched_yield resumed>)        = 0
+26342 sched_yield( <unfinished ...>
+26343 prctl(PR_SET_NAME, "EchoClientThrea"... <unfinished ...>
+26342 <... sched_yield resumed>)        = 0
+26343 <... prctl resumed>)              = 0
+26342 sched_yield()                     = 0
+26343 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0 <unfinished ...>
+26342 sched_yield()                     = 0
+26343 <... mmap resumed>)               = 0x7b228a000000
+26342 sched_yield( <unfinished ...>
+26343 munmap(0x7b228a000000, 33554432 <unfinished ...>
+26342 <... sched_yield resumed>)        = 0
+26342 sched_yield()                     = 0
+26343 <... munmap resumed>)             = 0
+26342 sched_yield( <unfinished ...>
+26343 munmap(0x7b2290000000, 33554432 <unfinished ...>
+26342 <... sched_yield resumed>)        = 0
+26342 sched_yield( <unfinished ...>
+26343 <... munmap resumed>)             = 0
+26342 <... sched_yield resumed>)        = 0
+26343 mprotect(0x7b228c000000, 135168, PROT_READ|PROT_WRITE <unfinished ...>
+26342 sched_yield()                     = 0
+26343 <... mprotect resumed>)           = 0
+26342 sched_yield()                     = 0
+26343 gettid( <unfinished ...>
+26342 sched_yield( <unfinished ...>
+26343 <... gettid resumed>)             = 26343
+26342 <... sched_yield resumed>)        = 0
+26342 sched_yield()                     = 0
+26343 epoll_ctl(5, EPOLL_CTL_DEL, 8, 0x7b22927f802c <unfinished ...>
+26342 getuid( <unfinished ...>
+26343 <... epoll_ctl resumed>)          = 0
+26342 <... getuid resumed>)             = 0
+26342 geteuid( <unfinished ...>
+26343 epoll_ctl(5, EPOLL_CTL_ADD, 8, {events=EPOLLIN, data={u32=8, u64=8}} <unfinished ...>
+26342 <... geteuid resumed>)            = 0
+26343 <... epoll_ctl resumed>)          = 0
+26342 getgid( <unfinished ...>
+26343 write(8, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+26342 <... getgid resumed>)             = 0
+26343 <... write resumed>)              = 8
+26342 getegid()                         = 0
+26343 epoll_wait(5,  <unfinished ...>
+26342 getuid( <unfinished ...>
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=8, u64=8}}], 32, -1) = 1
+26342 <... getuid resumed>)             = 0
+26342 geteuid( <unfinished ...>
+26343 read(8,  <unfinished ...>
+26342 <... geteuid resumed>)            = 0
+26343 <... read resumed>"\2\0\0\0\0\0\0\0", 8) = 8
+26342 getgid()                          = 0
+26342 getegid( <unfinished ...>
+26343 epoll_wait(5,  <unfinished ...>
+26342 <... getegid resumed>)            = 0
+26342 epoll_create1(EPOLL_CLOEXEC)      = 9
+26342 getuid()                          = 0
+26342 geteuid()                         = 0
+26342 getgid()                          = 0
+26342 getegid()                         = 0
+26342 pipe2([10, 11], O_NONBLOCK|O_CLOEXEC) = 0
+26342 getuid()                          = 0
+26342 geteuid()                         = 0
+26342 getgid()                          = 0
+26342 getegid()                         = 0
+26342 eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK) = 12
+26342 epoll_ctl(9, EPOLL_CTL_ADD, 12, {events=EPOLLIN, data={u32=12, u64=12}}) = 0
+26342 write(12, "\1\0\0\0\0\0\0\0", 8)  = 8
+26342 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7b2291600000
+26342 mprotect(0x7b2291601000, 8388608, PROT_READ|PROT_WRITE) = 0
+26342 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+26342 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7b2291e00910, parent_tid=0x7b2291e00910, exit_signal=0, stack=0x7b2291600000, stack_size=0x7f8400, tls=0x7b2291e00640} => {parent_tid=[26344]}, 88) = 26344
+26342 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+26342 sched_yield()                     = 0
+26342 sched_yield( <unfinished ...>
+26344 rseq(0x7b2291e00fe0, 0x20, 0, 0x53053053 <unfinished ...>
+26342 <... sched_yield resumed>)        = 0
+26344 <... rseq resumed>)               = 0
+26342 sched_yield( <unfinished ...>
+26344 set_robust_list(0x7b2291e00920, 24 <unfinished ...>
+26342 <... sched_yield resumed>)        = 0
+26344 <... set_robust_list resumed>)    = 0
+26342 sched_yield( <unfinished ...>
+26344 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+26342 <... sched_yield resumed>)        = 0
+26344 <... rt_sigprocmask resumed>NULL, 8) = 0
+26342 sched_yield()                     = 0
+26344 prctl(PR_SET_NAME, "MergeDataThread"... <unfinished ...>
+26342 sched_yield( <unfinished ...>
+26344 <... prctl resumed>)              = 0
+26342 <... sched_yield resumed>)        = 0
+26342 sched_yield( <unfinished ...>
+26344 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0 <unfinished ...>
+26342 <... sched_yield resumed>)        = 0
+26342 sched_yield( <unfinished ...>
+26344 <... mmap resumed>)               = 0x7b2284000000
+26342 <... sched_yield resumed>)        = 0
+26344 munmap(0x7b2288000000, 67108864 <unfinished ...>
+26342 sched_yield()                     = 0
+26342 sched_yield( <unfinished ...>
+26344 <... munmap resumed>)             = 0
+26342 <... sched_yield resumed>)        = 0
+26344 mprotect(0x7b2284000000, 135168, PROT_READ|PROT_WRITE <unfinished ...>
+26342 sched_yield()                     = 0
+26344 <... mprotect resumed>)           = 0
+26342 sched_yield()                     = 0
+26344 gettid( <unfinished ...>
+26342 sched_yield( <unfinished ...>
+26344 <... gettid resumed>)             = 26344
+26342 <... sched_yield resumed>)        = 0
+26342 sched_yield( <unfinished ...>
+26344 epoll_ctl(9, EPOLL_CTL_DEL, 12, 0x7b2291df802c <unfinished ...>
+26342 <... sched_yield resumed>)        = 0
+26344 <... epoll_ctl resumed>)          = 0
+26342 getuid( <unfinished ...>
+26344 epoll_ctl(9, EPOLL_CTL_ADD, 12, {events=EPOLLIN, data={u32=12, u64=12}} <unfinished ...>
+26342 <... getuid resumed>)             = 0
+26344 <... epoll_ctl resumed>)          = 0
+26342 geteuid( <unfinished ...>
+26344 write(12, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+26342 <... geteuid resumed>)            = 0
+26344 <... write resumed>)              = 8
+26342 getgid( <unfinished ...>
+26344 epoll_wait(9,  <unfinished ...>
+26342 <... getgid resumed>)             = 0
+26344 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=12, u64=12}}], 32, -1) = 1
+26342 getegid()                         = 0
+26344 read(12,  <unfinished ...>
+26342 getuid( <unfinished ...>
+26344 <... read resumed>"\2\0\0\0\0\0\0\0", 8) = 8
+26342 <... getuid resumed>)             = 0
+26342 geteuid( <unfinished ...>
+26344 epoll_wait(9,  <unfinished ...>
+26342 <... geteuid resumed>)            = 0
+26342 getgid()                          = 0
+26342 getegid()                         = 0
+26342 epoll_create1(EPOLL_CLOEXEC)      = 13
+26342 getuid()                          = 0
+26342 geteuid()                         = 0
+26342 getgid()                          = 0
+26342 getegid()                         = 0
+26342 pipe2([14, 15], O_NONBLOCK|O_CLOEXEC) = 0
+26342 getuid()                          = 0
+26342 geteuid()                         = 0
+26342 getgid()                          = 0
+26342 getegid()                         = 0
+26342 eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK) = 16
+26342 epoll_ctl(13, EPOLL_CTL_ADD, 16, {events=EPOLLIN, data={u32=16, u64=16}}) = 0
+26342 write(16, "\1\0\0\0\0\0\0\0", 8)  = 8
+26342 futex(0x7b2293029788, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26342 openat(AT_FDCWD, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 17
+26342 newfstatat(17, "", {st_mode=S_IFREG|0644, st_size=3552, ...}, AT_EMPTY_PATH) = 0
+26342 newfstatat(17, "", {st_mode=S_IFREG|0644, st_size=3552, ...}, AT_EMPTY_PATH) = 0
+26342 read(17, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\6\0\0\0\0"..., 4096) = 3552
+26342 lseek(17, -2260, SEEK_CUR)        = 1292
+26342 read(17, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\6\0\0\0\0"..., 4096) = 2260
+26342 close(17)                         = 0
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:10.762006 26342 Mdlw"..., 98) = 98
+26342 openat(AT_FDCWD, "config.txt", O_RDONLY) = 17
+26342 newfstatat(17, "", {st_mode=S_IFREG|0644, st_size=79, ...}, AT_EMPTY_PATH) = 0
+26342 read(17, "server_ip=30.1.1.100\nport=6666\np"..., 4096) = 79
+26342 read(17, "", 4096)                = 0
+26342 close(17)                         = 0
+26342 gettid()                          = 26342
+26342 write(8, "\1\0\0\0\0\0\0\0", 8)   = 8
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=8, u64=8}}], 32, -1) = 1
+26342 futex(0x7ffe47e05c04, FUTEX_WAIT_BITSET_PRIVATE, 2, {tv_sec=12219539, tv_nsec=445504264}, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+26343 read(8, "\1\0\0\0\0\0\0\0", 8)    = 8
+26343 socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP) = 17
+26343 fcntl(17, F_GETFL)                = 0x2 (flags O_RDWR)
+26343 fcntl(17, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+26343 bind(17, {sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.2.100")}, 16) = 0
+26343 getrandom("\xb9\x50\x1f\xa7\x11\x61\xe2\x39\xa8\xff\x73\x25\xcd\x0d\xf8\x8e\xed\x76\x08\xde\xe6\x3e\xdb\x08\xa0\xbc\x86\x86\xf3\x4f\x69\x72"..., 128, 0) = 128
+26343 gettid()                          = 26343
+26343 write(2, "W0710 10:55:10.762408 26343 Quic"..., 146) = 146
+26343 gettid()                          = 26343
+26343 write(2, "I0710 10:55:10.762454 26343 Mdlw"..., 104) = 104
+26343 setsockopt(17, SOL_IP, IP_TOS, [0], 4) = 0
+26343 setsockopt(17, SOL_IP, IP_MTU_DISCOVER, [3], 4) = 0
+26343 setsockopt(17, SOL_IP, IP_RECVERR, [1], 4) = 0
+26343 epoll_ctl(5, EPOLL_CTL_ADD, 17, {events=EPOLLIN, data={u32=17, u64=17}}) = 0
+26343 futex(0x7b2293640ba4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640ba0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640b9c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640778, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640a00, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640748, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640b98, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 openat(AT_FDCWD, "/usr/lib/ssl/openssl.cnf", O_RDONLY) = 18
+26343 futex(0x7b22936404d0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 newfstatat(18, "", {st_mode=S_IFREG|0644, st_size=12419, ...}, AT_EMPTY_PATH) = 0
+26343 read(18, "#\n# OpenSSL example configuratio"..., 4096) = 4096
+26343 read(18, "r type CA, the listed attributes"..., 4096) = 4096
+26343 read(18, "r:copy\n\n# DER hex encoding of an"..., 4096) = 4096
+26343 read(18, "ertout # insta.cert.pem\n\n[ssl_se"..., 4096) = 131
+26343 read(18, "", 4096)                = 0
+26343 close(18)                         = 0
+26343 futex(0x7b2293640920, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640b80, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640b7c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b229364070c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640b8c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640ef0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640b94, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 futex(0x7b2293640b90, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+26343 mprotect(0x7b228c021000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c022000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c023000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c024000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c025000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c026000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c027000, 32768, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c02f000, 32768, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c037000, 32768, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c03f000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c040000, 28672, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c047000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c048000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c049000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c04a000, 32768, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c052000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c053000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c054000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c055000, 28672, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c05c000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c05d000, 32768, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c065000, 32768, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c06d000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c06e000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c06f000, 32768, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c077000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c078000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c079000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c07a000, 28672, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c081000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c082000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c083000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c084000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c085000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c086000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c087000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c088000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c089000, 32768, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c091000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c092000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c093000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c094000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c095000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c096000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c097000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c098000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c099000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c09a000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c09b000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c09c000, 32768, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0a4000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0a5000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0a6000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0a7000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0a8000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0a9000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0aa000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 getrandom("\x41\xe6\x6f\x15\x5a\xd9\xb7\x70\x46\xad\xf7\x9d\xfe\x4b\xf4\x41\xd3\xec\xd5\x3d\x70\x31\x18\xf2\x47\xc3\x86\x1b\x87\xbc\x47\xcf", 32, 0) = 32
+26343 getrandom("\x91\xf3\x8a\x32\x43\xad\xce\x8a\x33\xa5\xcc\x9a\xef\xbd\x84\x66\x28\x42\x54\x66\xcd\xbf\x9c\x4a\x06\x73\xef\x92\x6f\x08\x08\xf8", 32, 0) = 32
+26343 mprotect(0x7b228c0ab000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 getsockopt(17, SOL_UDP, UDP_SEGMENT, [0], [4]) = 0
+26343 mprotect(0x7b228c0ac000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 sendmsg(17, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="\302\372\316\260\2\10\21a\3429\250\377s%\0\0D\322J\3422F#\263\260\230Z\34+\273\274\241"..., iov_len=1252}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 1252
+26343 futex(0x7ffe47e05c04, FUTEX_WAKE_BITSET_PRIVATE, 1, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+26342 <... futex resumed>)              = 0
+26343 <... futex resumed>)              = 1
+26342 futex(0x7ffe47e05c04, FUTEX_WAIT_BITSET_PRIVATE, 2, {tv_sec=12219539, tv_nsec=551765551}, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+26343 epoll_wait(5, [], 32, 0)          = 0
+26343 read(8, 0x7b22927f7f48, 8)        = -1 EAGAIN (Resource temporarily unavailable)
+26343 socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP) = 18
+26343 fcntl(18, F_GETFL)                = 0x2 (flags O_RDWR)
+26343 fcntl(18, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+26343 bind(18, {sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.3.100")}, 16) = 0
+26343 mprotect(0x7b228c0ad000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0ae000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0af000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 gettid()                          = 26343
+26343 write(2, "W0710 10:55:10.765425 26343 Quic"..., 146) = 146
+26343 gettid()                          = 26343
+26343 write(2, "I0710 10:55:10.765453 26343 Mdlw"..., 104) = 104
+26343 mprotect(0x7b228c0b0000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 setsockopt(18, SOL_IP, IP_TOS, [0], 4) = 0
+26343 setsockopt(18, SOL_IP, IP_MTU_DISCOVER, [3], 4) = 0
+26343 setsockopt(18, SOL_IP, IP_RECVERR, [1], 4) = 0
+26343 epoll_ctl(5, EPOLL_CTL_ADD, 18, {events=EPOLLIN, data={u32=18, u64=18}}) = 0
+26343 mprotect(0x7b228c0b1000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0b2000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 getrandom("\x66\x20\xdc\x45\xe9\x7d\x2a\xd3\x2a\xbe\xb2\x4c\x63\x58\xcc\xf9\x2f\x18\xad\xb8\x97\x3c\x67\x9e\xa3\xbf\x59\x77\xd8\x3a\x08\x65", 32, 0) = 32
+26343 getrandom("\x1c\xa3\xeb\x05\xe2\xfd\x2b\xd0\x03\xc9\x66\x6d\x10\x77\x68\xd8\x35\xe5\xec\xa5\xbb\xbb\x82\x2c\x06\xf8\x40\xa5\xa0\xeb\x41\x2d", 32, 0) = 32
+26343 mprotect(0x7b228c0b3000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 getsockopt(18, SOL_UDP, UDP_SEGMENT, [0], [4]) = 0
+26343 mprotect(0x7b228c0b4000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="\310\372\316\260\2\10\355v\10\336\346>\333\10\0\0D\322\207\363\23l\206[*\222R\236\27k\255\271"..., iov_len=1252}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 1252
+26343 futex(0x7ffe47e05c04, FUTEX_WAKE_BITSET_PRIVATE, 1, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+26342 <... futex resumed>)              = 0
+26343 <... futex resumed>)              = 1
+26342 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+26343 epoll_wait(5,  <unfinished ...>
+26342 <... mmap resumed>)               = 0x7b2290c00000
+26342 mprotect(0x7b2290c01000, 8388608, PROT_READ|PROT_WRITE) = 0
+26342 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+26342 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7b2291400910, parent_tid=0x7b2291400910, exit_signal=0, stack=0x7b2290c00000, stack_size=0x7f8400, tls=0x7b2291400640} => {parent_tid=[26345]}, 88) = 26345
+26342 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+26345 rseq(0x7b2291400fe0, 0x20, 0, 0x53053053 <unfinished ...>
+26342 openat(AT_FDCWD, "srv.conf", O_RDONLY <unfinished ...>
+26345 <... rseq resumed>)               = 0
+26342 <... openat resumed>)             = 19
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=39, ...}, AT_EMPTY_PATH) = 0
+26342 read(19, "max_conn 1024\nmode server\nshm_si"..., 4096) = 39
+26345 set_robust_list(0x7b2291400920, 24 <unfinished ...>
+26342 read(19,  <unfinished ...>
+26345 <... set_robust_list resumed>)    = 0
+26342 <... read resumed>"", 4096)       = 0
+26342 close(19 <unfinished ...>
+26345 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+26342 <... close resumed>)              = 0
+26345 <... rt_sigprocmask resumed>NULL, 8) = 0
+26345 mmap(0x7b2288000000, 67108864, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7b2280000000
+26345 mprotect(0x7b2280000000, 135168, PROT_READ|PROT_WRITE) = 0
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26342 socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 19
+26342 connect(19, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+26342 close(19)                         = 0
+26342 socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 19
+26342 connect(19, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+26342 close(19)                         = 0
+26342 newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=545, ...}, 0) = 0
+26342 newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+26342 openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 19
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=545, ...}, AT_EMPTY_PATH) = 0
+26342 read(19, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 545
+26342 read(19, "", 4096)                = 0
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=545, ...}, AT_EMPTY_PATH) = 0
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 19
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=81124, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 81124, PROT_READ, MAP_PRIVATE, 19, 0) = 0x7b2293656000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnss_compat.so.2", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=44024, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 47104, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b229364a000
+26342 mmap(0x7b229364c000, 28672, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x2000) = 0x7b229364c000
+26342 mmap(0x7b2293653000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x9000) = 0x7b2293653000
+26342 mmap(0x7b2293654000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x9000) = 0x7b2293654000
+26342 close(19)                         = 0
+26342 mprotect(0x7b2293654000, 4096, PROT_READ) = 0
+26342 munmap(0x7b2293656000, 81124)     = 0
+26342 newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=545, ...}, 0) = 0
+26342 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 19
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=81124, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 81124, PROT_READ, MAP_PRIVATE, 19, 0) = 0x7b2293656000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnss_nis.so.2", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=55808, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 58600, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b2293032000
+26342 mmap(0x7b2293034000, 36864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x2000) = 0x7b2293034000
+26342 mmap(0x7b229303d000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0xb000) = 0x7b229303d000
+26342 mmap(0x7b229303f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0xc000) = 0x7b229303f000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnsl.so.2", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=93280, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 105032, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b2292de6000
+26342 mmap(0x7b2292dea000, 57344, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x4000) = 0x7b2292dea000
+26342 mmap(0x7b2292df8000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x12000) = 0x7b2292df8000
+26342 mmap(0x7b2292dfc000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x15000) = 0x7b2292dfc000
+26342 mmap(0x7b2292dfe000, 6728, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b2292dfe000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libtirpc.so.3", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=182912, ...}, AT_EMPTY_PATH) = 0
+26342 brk(0x645ef3c59000)               = 0x645ef3c59000
+26342 mmap(NULL, 187256, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b2292db8000
+26342 mprotect(0x7b2292dbf000, 151552, PROT_NONE) = 0
+26342 mmap(0x7b2292dbf000, 110592, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x7000) = 0x7b2292dbf000
+26342 mmap(0x7b2292dda000, 36864, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x22000) = 0x7b2292dda000
+26342 mmap(0x7b2292de4000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x2b000) = 0x7b2292de4000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgssapi_krb5.so.2", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=338648, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 340960, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b2292d64000
+26342 mprotect(0x7b2292d6f000, 282624, PROT_NONE) = 0
+26342 mmap(0x7b2292d6f000, 229376, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0xb000) = 0x7b2292d6f000
+26342 mmap(0x7b2292da7000, 49152, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x43000) = 0x7b2292da7000
+26342 mmap(0x7b2292db4000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x4f000) = 0x7b2292db4000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libkrb5.so.3", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=827936, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 830576, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b2292c99000
+26342 mprotect(0x7b2292cba000, 634880, PROT_NONE) = 0
+26342 mmap(0x7b2292cba000, 380928, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x21000) = 0x7b2292cba000
+26342 mmap(0x7b2292d17000, 249856, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x7e000) = 0x7b2292d17000
+26342 mmap(0x7b2292d55000, 61440, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0xbb000) = 0x7b2292d55000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libk5crypto.so.3", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=182864, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 188472, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b2292c6a000
+26342 mprotect(0x7b2292c6e000, 163840, PROT_NONE) = 0
+26342 mmap(0x7b2292c6e000, 110592, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x4000) = 0x7b2292c6e000
+26342 mmap(0x7b2292c89000, 49152, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x1f000) = 0x7b2292c89000
+26342 mmap(0x7b2292c96000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x2b000) = 0x7b2292c96000
+26342 mmap(0x7b2292c98000, 56, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b2292c98000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcom_err.so.2", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=18504, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 20552, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b2293644000
+26342 mmap(0x7b2293646000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x2000) = 0x7b2293646000
+26342 mmap(0x7b2293647000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x3000) = 0x7b2293647000
+26342 mmap(0x7b2293648000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x3000) = 0x7b2293648000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libkrb5support.so.0", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=52016, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 54224, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b2292c5c000
+26342 mprotect(0x7b2292c5f000, 36864, PROT_NONE) = 0
+26342 mmap(0x7b2292c5f000, 24576, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x3000) = 0x7b2292c5f000
+26342 mmap(0x7b2292c65000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x9000) = 0x7b2292c65000
+26342 mmap(0x7b2292c68000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0xb000) = 0x7b2292c68000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libkeyutils.so.1", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=22600, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 24592, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b2292c55000
+26342 mmap(0x7b2292c57000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x2000) = 0x7b2292c57000
+26342 mmap(0x7b2292c59000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x4000) = 0x7b2292c59000
+26342 mmap(0x7b2292c5a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x4000) = 0x7b2292c5a000
+26342 close(19)                         = 0
+26342 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libresolv.so.2", O_RDONLY|O_CLOEXEC) = 19
+26342 read(19, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+26342 newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=68552, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 80456, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 19, 0) = 0x7b2292c41000
+26342 mmap(0x7b2292c44000, 40960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0x3000) = 0x7b2292c44000
+26342 mmap(0x7b2292c4e000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0xd000) = 0x7b2292c4e000
+26342 mmap(0x7b2292c51000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 19, 0xf000) = 0x7b2292c51000
+26342 mmap(0x7b2292c53000, 6728, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b2292c53000
+26342 close(19 <unfinished ...>
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=17, u64=17}}], 32, 7) = 1
+26342 <... close resumed>)              = 0
+26343 recvmsg(17, {msg_namelen=0}, MSG_ERRQUEUE) = -1 EAGAIN (Resource temporarily unavailable)
+26343 recvmsg(17, {msg_namelen=0}, MSG_ERRQUEUE) = -1 EAGAIN (Resource temporarily unavailable)
+26343 getsockopt(17, SOL_UDP, UDP_GRO,  <unfinished ...>
+26342 mprotect(0x7b2292c51000, 4096, PROT_READ <unfinished ...>
+26343 <... getsockopt resumed>[0], [4]) = 0
+26342 <... mprotect resumed>)           = 0
+26343 getsockopt(17, SOL_SOCKET, SO_TIMESTAMPING_OLD, [0], [4]) = 0
+26342 mprotect(0x7b2292c5a000, 4096, PROT_READ <unfinished ...>
+26343 mprotect(0x7b228c0b5000, 4096, PROT_READ|PROT_WRITE <unfinished ...>
+26342 <... mprotect resumed>)           = 0
+26343 <... mprotect resumed>)           = 0
+26343 mprotect(0x7b228c0b6000, 4096, PROT_READ|PROT_WRITE) = 0
+26342 mprotect(0x7b2292c68000, 4096, PROT_READ <unfinished ...>
+26343 recvmmsg(17,  <unfinished ...>
+26342 <... mprotect resumed>)           = 0
+26343 <... recvmmsg resumed>[{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="\304\372\316\260\2\0\10@\0\0\27\21\352\3269\0D\276\27\277:z]\231\10\335\23;\326\205dK"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=1232}], 5, 0, NULL) = 1
+26342 mprotect(0x7b2293648000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b2292c96000, 4096, PROT_READ) = 0
+26343 mprotect(0x7b228c0b7000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0b8000, 4096, PROT_READ|PROT_WRITE) = 0
+26342 mprotect(0x7b2292d55000, 53248, PROT_READ <unfinished ...>
+26343 mprotect(0x7b228c0b9000, 4096, PROT_READ|PROT_WRITE <unfinished ...>
+26342 <... mprotect resumed>)           = 0
+26343 <... mprotect resumed>)           = 0
+26343 mprotect(0x7b228c0ba000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0bb000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 sendmsg(17, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="\300\372\316\260\2\10@\0\0\27\21\352\3269\0\0D\322X\1\217\6'1i\363\344\32w~\212f"..., iov_len=1252}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 1252
+26342 mprotect(0x7b2292db4000, 8192, PROT_READ <unfinished ...>
+26343 epoll_wait(5,  <unfinished ...>
+26342 <... mprotect resumed>)           = 0
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=17, u64=17}}], 32, 4) = 1
+26343 recvmsg(17, {msg_namelen=0}, MSG_ERRQUEUE) = -1 EAGAIN (Resource temporarily unavailable)
+26343 recvmsg(17, {msg_namelen=0}, MSG_ERRQUEUE) = -1 EAGAIN (Resource temporarily unavailable)
+26342 mprotect(0x7b2292de4000, 4096, PROT_READ <unfinished ...>
+26343 recvmmsg(17,  <unfinished ...>
+26342 <... mprotect resumed>)           = 0
+26343 <... recvmmsg resumed>[{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="\352\372\316\260\2\0\10@\0\0\27\21\352\3269B\351\3168\262\32|\344\36\335\362T+\\*\277\217"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=762}], 5, 0, NULL) = 1
+26342 mprotect(0x7b2292dfc000, 4096, PROT_READ) = 0
+26342 mprotect(0x7b229303f000, 4096, PROT_READ) = 0
+26343 mprotect(0x7b228c0bc000, 4096, PROT_READ|PROT_WRITE) = 0
+26342 munmap(0x7b2293656000, 81124 <unfinished ...>
+26343 mprotect(0x7b228c0bd000, 4096, PROT_READ|PROT_WRITE <unfinished ...>
+26342 <... munmap resumed>)             = 0
+26343 <... mprotect resumed>)           = 0
+26343 mprotect(0x7b228c0be000, 4096, PROT_READ|PROT_WRITE <unfinished ...>
+26342 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC <unfinished ...>
+26343 <... mprotect resumed>)           = 0
+26342 <... openat resumed>)             = 19
+26343 mprotect(0x7b228c0bf000, 32768, PROT_READ|PROT_WRITE <unfinished ...>
+26342 newfstatat(19, "",  <unfinished ...>
+26343 <... mprotect resumed>)           = 0
+26342 <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1143, ...}, AT_EMPTY_PATH) = 0
+26342 lseek(19, 0, SEEK_SET)            = 0
+26342 read(19, "root:x:0:\ndaemon:x:1:\nbin:x:2:\ns"..., 4096) = 1143
+26342 close(19)                         = 0
+26342 rt_sigaction(SIGINT, {sa_handler=0x7b229383f639, sa_mask=[INT], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7b2292a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+26342 rt_sigaction(SIGTERM, {sa_handler=0x7b229383f639, sa_mask=[TERM], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7b2292a42520}, {sa_handler=0x645ec12b96e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7b2292a42520}, 8) = 0
+26342 futex(0x7ffe47e06620, FUTEX_WAIT_BITSET_PRIVATE, 4294967293, {tv_sec=12219540, tv_nsec=160209574}, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+26343 mprotect(0x7b228c0c7000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0c8000, 32768, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0d0000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0d1000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0d2000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0d3000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0d4000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0d5000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0d6000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0d7000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0d8000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0d9000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0da000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0db000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0dc000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 futex(0x7ffe47e06620, FUTEX_WAKE_BITSET_PRIVATE, 1, FUTEX_BITSET_MATCH_ANY) = 1
+26342 <... futex resumed>)              = 0
+26342 socket(AF_UNIX, SOCK_STREAM, 0 <unfinished ...>
+26343 setsockopt(17, SOL_IP, IP_RECVERR, [0], 4 <unfinished ...>
+26342 <... socket resumed>)             = 19
+26343 <... setsockopt resumed>)         = 0
+26342 unlink("/tmp/openvpn_signal.sock" <unfinished ...>
+26343 mprotect(0x7b228c0dd000, 4096, PROT_READ|PROT_WRITE) = 0
+26342 <... unlink resumed>)             = 0
+26342 bind(19, {sa_family=AF_UNIX, sun_path="/tmp/openvpn_signal.sock"}, 110 <unfinished ...>
+26343 sendmsg(17, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="\351\372\316\260\2\10@\0\0\27\21\352\3269\0@D\272F\356\260T\342M\303f>ol\20]\311"..., iov_len=85}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0 <unfinished ...>
+26342 <... bind resumed>)               = 0
+26342 listen(19, 15 <unfinished ...>
+26343 <... sendmsg resumed>)            = 85
+26342 <... listen resumed>)             = 0
+26342 accept(19, NULL, NULL <unfinished ...>
+26343 epoll_wait(5, [{events=EPOLLIN, data={u32=18, u64=18}}], 32, 3) = 1
+26343 recvmsg(18, {msg_namelen=0}, MSG_ERRQUEUE) = -1 EAGAIN (Resource temporarily unavailable)
+26343 recvmsg(18, {msg_namelen=0}, MSG_ERRQUEUE) = -1 EAGAIN (Resource temporarily unavailable)
+26343 getsockopt(18, SOL_UDP, UDP_GRO, [0], [4]) = 0
+26343 getsockopt(18, SOL_SOCKET, SO_TIMESTAMPING_OLD, [0], [4]) = 0
+26343 mprotect(0x7b228c0de000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0df000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 recvmmsg(18, [{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="\300\372\316\260\2\0\10@\0\0\r\367\347\37<\0D\276V\200\202\33=4\361\16\3663\256J\4\3"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=1232}, {msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="\343\372\316\260\2\0\10@\0\0\r\367\347\37<B\337a\24\212\25\216\350PZ\345&7!\361\234\225"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=752}], 5, 0, NULL) = 2
+26343 mprotect(0x7b228c0e0000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0e1000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0e2000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0e3000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0e4000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0e5000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 mprotect(0x7b228c0e6000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 setsockopt(18, SOL_IP, IP_RECVERR, [0], 4) = 0
+26343 mprotect(0x7b228c0e7000, 4096, PROT_READ|PROT_WRITE) = 0
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="\345\372\316\260\2\10@\0\0\r\367\347\37<\0@D\367$\337\316\373\326E\0\214\206\212@b\3017"..., iov_len=85}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 85
+26343 epoll_wait(5, [{events=EPOLLIN, data={u32=17, u64=17}}], 32, 2) = 1
+26343 recvmmsg(17, [{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="\354\372\316\260\2\0\10@\0\0\27\21\352\3269\31\266\327\21\335w\10\244\203\231\352\37\302\37\350_\210"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=41}, {msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="J\206\36\223@\215\4\222[L\215R\221\353\226\3\236\220t/3\2701P\301\"\3054\354\331wW"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=144}], 5, 0, NULL) = 2
+26343 epoll_wait(5, [{events=EPOLLIN, data={u32=18, u64=18}}], 32, 2) = 1
+26343 recvmmsg(18, [{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="\351\372\316\260\2\0\10@\0\0\r\367\347\37<\31V\0345&(\373g\r\32\361\223\364T\f\246U"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=41}, {msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="S\331\356\245\206\236\f\305\377\342'\223i.6\234\221[$\340\307\252hue\336\206t\267\307y\207"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=144}], 5, 0, NULL) = 2
+26343 epoll_wait(5, [], 32, 2)          = 0
+26343 epoll_wait(5, [], 32, 10)         = 0
+26343 sendmsg(17, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="T@\0\0\27\21\352\3269\320\237\25619A\223k\2Dx\t\244\16DI\31\257%_=e{"..., iov_len=68}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 68
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="Y@\0\0\r\367\347\37<\t\230k\316\211I3I)\227\352\206#\10\302\320\247\233a7\230R'"..., iov_len=68}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 68
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:11.766489 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:12.767928 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2550) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:13.769261 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:14.770284 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:15.771603 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2560) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:16.772538 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:17.773572 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2560) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:18.774187 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:19.775658 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:20.777174 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2560) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:21.778578 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:22.779547 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2550) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:23.780098 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:24.781519 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:25.782948 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2560) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:26.784377 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:27.785771 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2560) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:28.786851 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:29.787427 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26342 <... accept resumed>)             = 20
+26342 fcntl(20, F_GETFL)                = 0x2 (flags O_RDWR)
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:29.806126 26342 Mdlw"..., 80) = 80
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:29.806190 26342 Mdlw"..., 76) = 76
+26342 write(8, "\1\0\0\0\0\0\0\0", 8)   = 8
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=8, u64=8}}], 32, 2550) = 1
+26342 gettid()                          = 26342
+26343 read(8,  <unfinished ...>
+26342 write(2, "I0710 10:55:29.806245 26342 Mdlw"..., 76 <unfinished ...>
+26343 <... read resumed>"\1\0\0\0\0\0\0\0", 8) = 8
+26342 <... write resumed>)              = 76
+26342 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=2000000},  <unfinished ...>
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="\\@\0\0\r\367\347\37<\345\307\355%|\343\31\217\222\353\264\355\20\357\320`\232?\17\257\277t!"..., iov_len=68}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 68
+26343 epoll_wait(5, [], 32, 0)          = 0
+26343 read(8, 0x7b22927f7f48, 8)        = -1 EAGAIN (Resource temporarily unavailable)
+26343 sendmsg(17, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="E@\0\0\27\21\352\3269\263f\200\275\236s\266-Imz\0$\331\340PE\244$P\5{?"..., iov_len=68}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 68
+26343 epoll_wait(5, [{events=EPOLLIN, data={u32=18, u64=18}}], 32, 20) = 1
+26343 recvmmsg(18, [{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="R\303.\7\206A\212\212\310\335\301I\213P\320D8\361\343\205\26\256\355IT\214z\243\375\260\301\216"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=80}], 5, 0, NULL) = 1
+26343 write(12, "\1\0\0\0\0\0\0\0", 8)  = 8
+26344 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=12, u64=12}}], 32, -1) = 1
+26343 epoll_wait(5,  <unfinished ...>
+26344 read(12, "\1\0\0\0\0\0\0\0", 8)   = 8
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:29.807907 26344 Mdlw"..., 73) = 73
+26344 epoll_wait(9,  <unfinished ...>
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=17, u64=17}}], 32, 19) = 1
+26343 recvmmsg(17, [{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="K\3144\346@s\nd\33U\265~\364$\302\206\307O\360\255\341\254+%\354\310 \371\350\357\362N"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=80}], 5, 0, NULL) = 1
+26343 write(12, "\1\0\0\0\0\0\0\0", 8)  = 8
+26344 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=12, u64=12}}], 32, -1) = 1
+26343 epoll_wait(5,  <unfinished ...>
+26344 read(12, "\1\0\0\0\0\0\0\0", 8)   = 8
+26344 gettid()                          = 26344
+26342 <... clock_nanosleep resumed>0x7ffe47e05be0) = 0
+26344 write(2, "I0710 10:55:29.808317 26344 Mdlw"..., 73 <unfinished ...>
+26342 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=2000000},  <unfinished ...>
+26344 <... write resumed>)              = 73
+26344 epoll_wait(9,  <unfinished ...>
+26342 <... clock_nanosleep resumed>0x7ffe47e05be0) = 0
+26342 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=2000000}, 0x7ffe47e05be0) = 0
+26342 openat(AT_FDCWD, "/dev/shm/socket_0", O_RDWR|O_CREAT|O_TRUNC|O_NOFOLLOW|O_CLOEXEC, 0660) = 21
+26342 fchown(21, -1, 1001)              = 0
+26342 fchmod(21, 0660)                  = 0
+26342 ftruncate(21, 20971520)           = 0
+26342 mmap(NULL, 20971520, PROT_READ|PROT_WRITE, MAP_SHARED, 21, 0) = 0x7b228ac00000
+26342 newfstatat(1, "", {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x5), ...}, AT_EMPTY_PATH) = 0
+26342 write(1, "[INFO] shm_listen: Socket 0 is n"..., 61) = 61
+26342 write(1, "[DEBUG] shm_accept: Global liste"..., 72) = 72
+26342 write(1, "[DEBUG] shm_accept: listen_socke"..., 66) = 66
+26342 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 18) = 0
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="C@\0\0\r\367\347\37<$\t\351\346\360\312\331R-\377\230\354\2513\27\276\326~\271\326\206\354v"..., iov_len=36}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 36
+26343 sendmsg(17, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="W@\0\0\27\21\352\3269c\351\317\\\340Nb\231w\3761H\365P\224'\321u\300`\224\345u"..., iov_len=36}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 36
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:30.788126 26345 Mdlw"..., 149) = 149
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26342 <... clock_nanosleep resumed>0x7ffe47e05a00) = 0
+26342 write(1, "[INFO] shm_accept: New connectio"..., 57) = 57
+26342 write(1, "\n", 1)                 = 1
+26342 openat(AT_FDCWD, "/dev/shm/socket_1", O_RDWR|O_NOFOLLOW|O_CLOEXEC) = 22
+26342 newfstatat(22, "", {st_mode=S_IFREG|0660, st_size=20971520, ...}, AT_EMPTY_PATH) = 0
+26342 mmap(NULL, 20971520, PROT_READ|PROT_WRITE, MAP_SHARED, 22, 0) = 0x7b2289800000
+26342 openat(AT_FDCWD, "/dev/shm/srv_buf_1", O_RDWR|O_CREAT|O_TRUNC|O_NOFOLLOW|O_CLOEXEC, 0660) = 23
+26342 fchown(23, -1, 1001)              = 0
+26342 fchmod(23, 0660)                  = 0
+26342 ftruncate(23, 20971520)           = 0
+26342 mmap(NULL, 20971520, PROT_READ|PROT_WRITE, MAP_SHARED, 23, 0) = 0x7b2288400000
+26342 write(1, "[INFO] shm_accept: New connectio"..., 132) = 132
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:30.814271 26342 Mdlw"..., 80) = 80
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:30.814401 26342 Mdlw"..., 105) = 105
+26342 epoll_ctl(13, EPOLL_CTL_ADD, 20, {events=EPOLLIN, data={u32=20, u64=20}}) = 0
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:30.814503 26342 Mdlw"..., 97) = 97
+26342 epoll_ctl(13, EPOLL_CTL_DEL, 16, 0x7ffe47e05a7c) = 0
+26342 epoll_ctl(13, EPOLL_CTL_ADD, 16, {events=EPOLLIN, data={u32=16, u64=16}}) = 0
+26342 write(16, "\1\0\0\0\0\0\0\0", 8)  = 8
+26342 epoll_wait(13, [{events=EPOLLIN, data={u32=16, u64=16}}, {events=EPOLLIN, data={u32=20, u64=20}}], 32, -1) = 2
+26342 read(16, "\2\0\0\0\0\0\0\0", 8)   = 8
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:30.814625 26342 Mdlw"..., 86) = 86
+26342 read(20, "R", 1)                  = 1
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:30.814661 26342 Mdlw"..., 152) = 152
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:30.814683 26342 Mdlw"..., 108) = 108
+26342 write(1, "[DEBUG] shm_read: write_offset: "..., 50) = 50
+26342 newfstatat(4, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+26342 write(1, "[DEBUG] shm_read: shm file inode"..., 43) = 43
+26342 write(1, "\n", 1)                 = 1
+26342 write(1, "[DEBUG] shm_read: read_offset: 8"..., 100) = 100
+26342 write(1, "[DEBUG] shm_read: CPU 4 read req"..., 87) = 87
+26342 write(1, "\n", 1)                 = 1
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:30.814791 26342 Mdlw"..., 91) = 91
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:30.814817 26342 Quic"..., 86) = 86
+26342 write(8, "\1\0\0\0\0\0\0\0", 8)   = 8
+26342 gettid( <unfinished ...>
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=8, u64=8}}], 32, 1430) = 1
+26342 <... gettid resumed>)             = 26342
+26342 write(2, "I0710 10:55:30.814858 26342 Mdlw"..., 139 <unfinished ...>
+26343 read(8,  <unfinished ...>
+26342 <... write resumed>)              = 139
+26343 <... read resumed>"\1\0\0\0\0\0\0\0", 8) = 8
+26342 epoll_wait(13,  <unfinished ...>
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="_@\0\0\r\367\347\37<\35\201\222@[\203\235\245\264\227\207\225\253o\325\342\3265AU\372\240\333"..., iov_len=68}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 68
+26343 epoll_wait(5, [], 32, 20)         = 0
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="V@\0\0\r\367\347\37<\367\3M\313Ya\242\0\274Gt\335\322'\261\317\362\213\263-\347\307\232"..., iov_len=47}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 47
+26343 epoll_wait(5, [], 32, 29)         = 0
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="D@\0\0\r\367\347\37<I\20\230\3715\r\"\213\225\223-\305\321\321\273Ta`\247)\361\217y"..., iov_len=47}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 47
+26343 epoll_wait(5, [], 32, 60)         = 0
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="E@\0\0\r\367\347\37<H\"YV\242\312p\1\24$?\335\376\5\242(t\22\270\227\321\34\215"..., iov_len=47}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 47
+26343 epoll_wait(5, [], 32, 100)        = 0
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="H@\0\0\r\367\347\37<\\\231\3oL\252W\323\376\247\6uN\247\341]7\341O\211\324\262\244"..., iov_len=47}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 47
+26343 epoll_wait(5, [], 32, 200)        = 0
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="L@\0\0\r\367\347\37<\235y\2107\20\212Dr\7\335ko\342\351j\350M\251\343\216,~\0"..., iov_len=47}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 47
+26343 epoll_wait(5, [], 32, 30)         = 0
+26343 epoll_wait(5, [], 32, 370)        = 0
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="_@\0\0\r\367\347\37<A`7\0W\314\251\31\267\316\210\260\324\303\201UO|\270 \310\317h"..., iov_len=47}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 47
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:31.789490 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=18, u64=18}}], 32, 800) = 1
+26343 recvmmsg(18, [{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="W\220\246\251If\5V\331\35#\0\6\276\353\t\211\327l\265\360\221$}\2268_]R8\205\270"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=144}, {msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="M?0Q\320\20i\333\303%\33\n5\332$T\r\341FM\372k\237\254\21\16\245O\270\21\210\215"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=48}, {msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="E\246J#8\25\341\31cho\236\342n@\343s\f&sx\227\257\313E\333\360!Qs%\16"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=48}, {msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="T\263M\374\3&\\\320\37{\32\311\270.f\314K\342%\201\231g\254\313D\203\27\334\23\315\374["..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=48}, {msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="V\247\363\300I\235\275\273g\200\223q\25I\362\221\206\2\224\334\244P\2$;\322z\332\210\234\177\364"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=48}], 5, 0, NULL) = 5
+26343 write(12, "\1\0\0\0\0\0\0\0", 8)  = 8
+26344 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=12, u64=12}}], 32, -1) = 1
+26343 epoll_wait(5, [{events=EPOLLIN, data={u32=18, u64=18}}], 32, 30) = 1
+26344 read(12,  <unfinished ...>
+26343 recvmmsg(18,  <unfinished ...>
+26344 <... read resumed>"\1\0\0\0\0\0\0\0", 8) = 8
+26343 <... recvmmsg resumed>[{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="X\216a\2\t\3453r\314o\362~\205\351o\250\177iN\306[\321\205\351\310hh6oZ\313\242"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=48}, {msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="V4\301jMl\202U!\317\344w\335H%#,2>\341\262\325\331\210/\364\\$\351\375w\342"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=48}], 5, 0, NULL) = 2
+26344 gettid( <unfinished ...>
+26343 epoll_wait(5,  <unfinished ...>
+26344 <... gettid resumed>)             = 26344
+26344 write(2, "I0710 10:55:31.887663 26344 Mdlw"..., 104) = 104
+26344 write(1, "[DEBUG] shm_write: Before sync, "..., 72) = 72
+26344 write(1, "\n", 1)                 = 1
+26344 write(1, "[DEBUG] shm_write: CPU 10 write "..., 91) = 91
+26344 write(1, "\n", 1)                 = 1
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.888437 26344 Mdlw"..., 107) = 107
+26344 write(20, "D", 1)                 = 1
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.888661 26344 Mdlw"..., 147) = 147
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.888792 26344 Mdlw"..., 122) = 122
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.889531 26344 Mdlw"..., 71) = 71
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.889671 26344 Mdlw"..., 104) = 104
+26344 write(1, "[DEBUG] shm_write: Before sync, "..., 73) = 73
+26344 write(1, "\n", 1)                 = 1
+26344 write(1, "[DEBUG] shm_write: CPU 10 write "..., 92) = 92
+26344 write(1, "\n", 1)                 = 1
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.890082 26344 Mdlw"..., 107) = 107
+26344 write(20, "D", 1)                 = 1
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.890312 26344 Mdlw"..., 147) = 147
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.890441 26344 Mdlw"..., 122) = 122
+26344 gettid()                          = 26344
+26342 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=20, u64=20}}], 32, -1) = 1
+26344 write(2, "I0710 10:55:31.890573 26344 Mdlw"..., 71) = 71
+26344 epoll_wait(9,  <unfinished ...>
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.890730 26342 Mdlw"..., 86) = 86
+26342 read(20, "R", 1)                  = 1
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.891086 26342 Mdlw"..., 152) = 152
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.891247 26342 Mdlw"..., 108) = 108
+26342 write(1, "[DEBUG] shm_read: write_offset: "..., 52) = 52
+26342 newfstatat(4, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+26342 write(1, "[DEBUG] shm_read: shm file inode"..., 43) = 43
+26342 write(1, "\n", 1)                 = 1
+26342 write(1, "[DEBUG] shm_read: read_offset: 9"..., 101) = 101
+26342 write(1, "[DEBUG] shm_read: CPU 4 read req"..., 101) = 101
+26342 write(1, "\n", 1)                 = 1
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.891533 26342 Mdlw"..., 104) = 104
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.891557 26342 Quic"..., 86) = 86
+26342 write(8, "\1\0\0\0\0\0\0\0", 8)   = 8
+26342 gettid( <unfinished ...>
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=8, u64=8}}], 32, 30) = 1
+26342 <... gettid resumed>)             = 26342
+26342 write(2, "I0710 10:55:31.891594 26342 Mdlw"..., 139 <unfinished ...>
+26343 read(8,  <unfinished ...>
+26342 <... write resumed>)              = 139
+26343 <... read resumed>"\1\0\0\0\0\0\0\0", 8) = 8
+26342 epoll_wait(13, [{events=EPOLLIN, data={u32=20, u64=20}}], 32, -1) = 1
+26343 mprotect(0x7b228c0e8000, 4096, PROT_READ|PROT_WRITE <unfinished ...>
+26342 gettid()                          = 26342
+26343 <... mprotect resumed>)           = 0
+26342 write(2, "I0710 10:55:31.891638 26342 Mdlw"..., 86) = 86
+26342 read(20, "R", 1)                  = 1
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="O@\0\0\r\367\347\37<T\5\216\223\207\2204\322sf\204\361\376\370\0170\263\363FF\370\377)"..., iov_len=356}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0 <unfinished ...>
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.891673 26342 Mdlw"..., 152 <unfinished ...>
+26343 <... sendmsg resumed>)            = 356
+26342 <... write resumed>)              = 152
+26342 gettid()                          = 26342
+26343 epoll_wait(5,  <unfinished ...>
+26342 write(2, "I0710 10:55:31.891700 26342 Mdlw"..., 108) = 108
+26342 write(1, "[DEBUG] shm_read: write_offset: "..., 52) = 52
+26342 newfstatat(4, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+26342 write(1, "[DEBUG] shm_read: shm file inode"..., 43) = 43
+26342 write(1, "\n", 1)                 = 1
+26342 write(1, "[DEBUG] shm_read: read_offset: 4"..., 102) = 102
+26342 write(1, "[DEBUG] shm_read: CPU 4 read req"..., 89) = 89
+26342 write(1, "\n", 1)                 = 1
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.891805 26342 Mdlw"..., 91) = 91
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.891827 26342 Quic"..., 86) = 86
+26342 write(8, "\1\0\0\0\0\0\0\0", 8)   = 8
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=8, u64=8}}], 32, 26) = 1
+26342 gettid()                          = 26342
+26343 read(8,  <unfinished ...>
+26342 write(2, "I0710 10:55:31.891861 26342 Mdlw"..., 139 <unfinished ...>
+26343 <... read resumed>"\1\0\0\0\0\0\0\0", 8) = 8
+26342 <... write resumed>)              = 139
+26342 epoll_wait(13,  <unfinished ...>
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="S@\0\0\r\367\347\37<\311T\236\37\17\1\256\357L\0#\345\276q\30\362\207M\6`\275\236/"..., iov_len=68}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 68
+26343 epoll_wait(5, [{events=EPOLLIN, data={u32=18, u64=18}}], 32, 26) = 1
+26343 recvmmsg(18, [{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="X+.\v#\372\270\27\3537%\35\322\v'(a\375\335\201\304\321\n%Eq\3\21\310v,'"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=1232}], 5, 0, NULL) = 1
+26343 write(12, "\1\0\0\0\0\0\0\0", 8)  = 8
+26344 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=12, u64=12}}], 32, -1) = 1
+26343 epoll_wait(5,  <unfinished ...>
+26344 read(12, "\1\0\0\0\0\0\0\0", 8)   = 8
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899221 26344 Mdlw"..., 108) = 108
+26344 write(1, "[DEBUG] shm_write: Before sync, "..., 74 <unfinished ...>
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=18, u64=18}}], 32, 18) = 1
+26344 <... write resumed>)              = 74
+26344 write(1, "\n", 1 <unfinished ...>
+26343 recvmmsg(18,  <unfinished ...>
+26344 <... write resumed>)              = 1
+26343 <... recvmmsg resumed>[{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="J\372\220\217\177\211\374\36\\\33\355\246\204\331\20(\270\307)\314\300\234\260\34\224\31\204Fi\324=\271"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=944}], 5, 0, NULL) = 1
+26344 write(1, "[DEBUG] shm_write: CPU 10 write "..., 105) = 105
+26344 write(1, "\n", 1 <unfinished ...>
+26343 epoll_wait(5,  <unfinished ...>
+26344 <... write resumed>)              = 1
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899299 26344 Mdlw"..., 109) = 109
+26344 write(20, "D", 1)                 = 1
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899336 26344 Mdlw"..., 147) = 147
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899358 26344 Mdlw"..., 128) = 128
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899379 26344 Mdlw"..., 71) = 71
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899402 26344 Mdlw"..., 107) = 107
+26344 write(1, "[DEBUG] shm_write: Before sync, "..., 75) = 75
+26344 write(1, "\n", 1)                 = 1
+26344 write(1, "[DEBUG] shm_write: CPU 10 write "..., 220) = 220
+26344 write(1, "\n", 1)                 = 1
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899470 26344 Mdlw"..., 108) = 108
+26344 write(20, "D", 1)                 = 1
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899503 26344 Mdlw"..., 147) = 147
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899525 26344 Mdlw"..., 127) = 127
+26344 epoll_wait(9, [], 32, 0)          = 0
+26344 read(12, 0x7b2291df7f48, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+26344 write(1, "[DEBUG] shm_write: Before sync, "..., 75) = 75
+26344 write(1, "\n", 1)                 = 1
+26344 write(1, "[DEBUG] shm_write: CPU 10 write "..., 181) = 181
+26344 write(1, "\n", 1)                 = 1
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899618 26344 Mdlw"..., 108) = 108
+26344 write(20, "D", 1)                 = 1
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899652 26344 Mdlw"..., 147) = 147
+26344 gettid()                          = 26344
+26344 write(2, "I0710 10:55:31.899674 26344 Mdlw"..., 123) = 123
+26344 epoll_wait(9,  <unfinished ...>
+26342 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=20, u64=20}}], 32, -1) = 1
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.900107 26342 Mdlw"..., 86) = 86
+26342 read(20, "R", 1)                  = 1
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.900153 26342 Mdlw"..., 152) = 152
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.900175 26342 Mdlw"..., 108) = 108
+26342 write(1, "[DEBUG] shm_read: write_offset: "..., 52) = 52
+26342 newfstatat(4, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+26342 write(1, "[DEBUG] shm_read: shm file inode"..., 43) = 43
+26342 write(1, "\n", 1)                 = 1
+26342 write(1, "[DEBUG] shm_read: read_offset: 4"..., 102) = 102
+26342 write(1, "[DEBUG] shm_read: CPU 4 read req"..., 89) = 89
+26342 write(1, "\n", 1)                 = 1
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.900279 26342 Mdlw"..., 91) = 91
+26342 gettid()                          = 26342
+26342 write(2, "I0710 10:55:31.900302 26342 Quic"..., 86) = 86
+26342 write(8, "\1\0\0\0\0\0\0\0", 8)   = 8
+26343 <... epoll_wait resumed>[{events=EPOLLIN, data={u32=8, u64=8}}], 32, 18) = 1
+26342 gettid()                          = 26342
+26343 read(8,  <unfinished ...>
+26342 write(2, "I0710 10:55:31.900337 26342 Mdlw"..., 139 <unfinished ...>
+26343 <... read resumed>"\1\0\0\0\0\0\0\0", 8) = 8
+26342 <... write resumed>)              = 139
+26342 epoll_wait(13,  <unfinished ...>
+26343 sendmsg(18, {msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=16, msg_iov=[{iov_base="U@\0\0\r\367\347\37<U\306\253\314B\240>\261k(\2530N7\2302V%\tcs\250K"..., iov_len=68}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 68
+26343 epoll_wait(5, [], 32, 17)         = 0
+26343 epoll_wait(5, [{events=EPOLLIN, data={u32=18, u64=18}}], 32, 1900) = 1
+26343 recvmmsg(18, [{msg_hdr={msg_name={sa_family=AF_INET, sin_port=htons(6666), sin_addr=inet_addr("30.1.1.100")}, msg_namelen=128 => 16, msg_iov=[{iov_base="U:y\252\20\215,n\5\255\347\373\236\323v\25\334\324\333\234r\236u$\344\ty\352P\276\374\261"..., iov_len=1500}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, msg_len=48}], 5, 0, NULL) = 1
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:32.790735 26345 Mdlw"..., 135) = 135
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:33.791883 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 1659) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:34.793285 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:35.794624 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2560) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:36.795881 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:37.796759 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:38.797997 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2560) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:39.798880 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:40.799991 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2550) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:41.800457 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:42.801898 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:43.803287 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2560) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26345 <... clock_nanosleep resumed>0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:44.804714 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7b22913f82e0) = 0
+26345 gettid()                          = 26345
+26345 write(2, "I0710 10:55:45.805707 26345 Mdlw"..., 119) = 119
+26345 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+26343 <... epoll_wait resumed>[], 32, 2560) = 0
+26343 epoll_wait(5,  <unfinished ...>
+26342 <... epoll_wait resumed>0x645ef3c2bba0, 32, -1) = -1 EINTR (Interrupted system call)
+26342 --- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
+26342 write(1, "[INFO] cleanup_shared_memory: Cl"..., 56) = 56
+26342 munmap(0x7b2288400000, 20971520)  = 0
+26342 close(1)                          = 0
+26342 unlink("/dev/shm/{")              = -1 ENOENT (No such file or directory)
+26342 write(1, "[INFO] cleanup_shared_memory: Sh"..., 59) = -1 EBADF (Bad file descriptor)
+26342 membarrier(MEMBARRIER_CMD_QUERY, 0) = 0x3ff (MEMBARRIER_CMD_GLOBAL|MEMBARRIER_CMD_GLOBAL_EXPEDITED|MEMBARRIER_CMD_REGISTER_GLOBAL_EXPEDITED|MEMBARRIER_CMD_PRIVATE_EXPEDITED|MEMBARRIER_CMD_REGISTER_PRIVATE_EXPEDITED|MEMBARRIER_CMD_PRIVATE_EXPEDITED_SYNC_CORE|MEMBARRIER_CMD_REGISTER_PRIVATE_EXPEDITED_SYNC_CORE|MEMBARRIER_CMD_PRIVATE_EXPEDITED_RSEQ|MEMBARRIER_CMD_REGISTER_PRIVATE_EXPEDITED_RSEQ|0x200)
+26342 membarrier(MEMBARRIER_CMD_PRIVATE_EXPEDITED, 0) = -1 EPERM (Operation not permitted)
+26342 membarrier(MEMBARRIER_CMD_REGISTER_PRIVATE_EXPEDITED, 0) = 0
+26342 membarrier(MEMBARRIER_CMD_PRIVATE_EXPEDITED, 0) = 0
+26342 exit_group(2)                     = ?
+26345 <... clock_nanosleep resumed> <unfinished ...>) = ?
+26344 <... epoll_wait resumed> <unfinished ...>) = ?
+26343 <... epoll_wait resumed> <unfinished ...>) = ?
+26345 +++ exited with 2 +++
+26344 +++ exited with 2 +++
+26343 +++ exited with 2 +++
+26342 +++ exited with 2 +++

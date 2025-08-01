@@ -1,0 +1,765 @@
+#include <sys/mman.h>
+#include <sys/stat.h> 
+#include <fcntl.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <errno.h>
+#include <signal.h>
+#include <grp.h>
+
+#include "shm_sock.h"
+// Initialize global shm_name string array
+char shm_names[MAX_CONNECTIONS][20];  // Assume each name is up to 20 characters long
+// Create and initialize conn array
+int conn[MAX_CONNECTIONS];
+
+shm_global_t *tctx;
+
+#define CONFIG_FILE "shm_sock.conf"
+
+int openvpn_gid = -1;
+
+void cleanup_shared_memory(int signum) {
+    LOG_INFO(__func__,"Cleaning shared memory...");
+    
+    // 清理所有连接的共享内存
+    for (int i = 0; i < MAX_CONNECTIONS; i++) {
+        shm_close(i);
+    }
+    
+     // 解除映射并关闭全局共享内存
+    if (tctx != NULL) {
+        free(tctx);
+    }
+
+    LOG_INFO(__func__,"Shared memory is cleaned up.");
+    exit(signum);
+}
+
+void *alloc_shm(const char *name, size_t size) {
+    int shm_fd = shm_open(name, O_CREAT | O_RDWR | O_TRUNC, 0666);
+    if (shm_fd == -1) {
+        perror("Unable to create shared memory");
+        return NULL;
+    }
+
+    if (ftruncate(shm_fd, size) == -1) {
+        perror("Unable to set size of shared memory");
+        close(shm_fd);
+        return NULL;
+    }
+
+    void *ptr = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
+    if (ptr == MAP_FAILED) {
+        perror("Unable to map shared memory");
+        close(shm_fd);
+        return NULL;
+    }
+
+    return ptr;
+}
+
+void *read_shm(const char *name) {
+    int shm_fd = shm_open(name, O_RDWR, 0660);
+    if (shm_fd == -1) {
+        perror("Unable to open shared memory");
+        return NULL;
+    }
+
+    struct stat sb;
+    if (fstat(shm_fd, &sb) == -1) {
+        perror("Unable to get size of shared memory");
+        close(shm_fd);
+        return NULL;
+    }
+
+    void *ptr = mmap(NULL, sb.st_size, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
+    if (ptr == MAP_FAILED) {
+        perror("Unable to map shared memory");
+        close(shm_fd);
+        return NULL;
+    }
+
+    return ptr;
+}
+
+size_t parse_size(const char *str) {
+    char *endptr;
+    size_t size = strtoull(str, &endptr, 10);
+    
+    while (isspace(*endptr)) endptr++;
+    
+    if (*endptr == 'g' || *endptr == 'G') {
+        size *= 1024 * 1024 * 1024;
+    } else if (*endptr == 'm' || *endptr == 'M') {
+        size *= 1024 * 1024;
+    } else if (*endptr == 'k' || *endptr == 'K') {
+        size *= 1024;
+    } else if (*endptr != '\0') {
+        LOG_ERROR(__func__,"Invalid size format: %s", str);
+        exit(1);
+    }
+    
+    return size;
+}
+
+void *alloc_shared_memory(const char *name, size_t size, shm_socket_t* s) {
+    int shm_fd = shm_open(name, O_CREAT | O_RDWR | O_TRUNC, 0660);
+    if (shm_fd == -1) {
+        perror("Unable to create shared memory");
+        return NULL;
+    }
+
+    if (fchown(shm_fd, -1, openvpn_gid) == -1) {
+        perror("fchown failed");
+        close(shm_fd);
+        shm_unlink(name);
+        return NULL;
+    }
+
+    if (fchmod(shm_fd, 0660) == -1) {
+        LOG_ERROR(__func__,"fchmod failed for %s, error code: %d", name, errno);
+        close(shm_fd); // 清理
+        shm_unlink(name); // 清理
+        return NULL; // <--- 我把这里也改成了 NULL，因为函数应该返回 void*
+    }
+
+    if (ftruncate(shm_fd, size) == -1) {
+        perror("Unable to set size of shared memory");
+        close(shm_fd);
+        return NULL;
+    }
+
+    void *ptr = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
+    if (ptr == MAP_FAILED) {
+        perror("Unable to map shared memory");
+        close(shm_fd);
+        return NULL;
+    }
+
+    if(s){
+        s->fd = shm_fd;
+    }
+
+    return ptr;
+}
+
+void *read_shared_memory(const char *name) {
+    int shm_fd = shm_open(name, O_RDWR, 0666);
+    if (shm_fd == -1) {
+        perror("Unable to open shared memory");
+        return NULL;
+    }
+
+    struct stat sb;
+    if (fstat(shm_fd, &sb) == -1) {
+        perror("Unable to get size of shared memory");
+        close(shm_fd);
+        return NULL;
+    }
+
+    void *ptr = mmap(NULL, sb.st_size, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
+    if (ptr == MAP_FAILED) {
+        perror("Unable to map shared memory");
+        close(shm_fd);
+        return NULL;
+    }
+
+    return ptr;
+}
+
+
+shm_socket_t *alloc_new_sock(shm_socket_t *s){
+    if(s == NULL)
+        s = (shm_socket_t *)malloc(sizeof(shm_socket_t));
+    s->fd = -1;
+    s->status = -2;  // Initialize connection status to initial value
+    s->buffer.ptr = NULL;
+    s->buffer.read_offset = 0;
+    s->buffer.write_offset = 0;
+    s->buffer.capacity = -1;
+    return s;
+}
+
+shm_config_t *read_config(const char *config_file) {
+    shm_config_t *config = (shm_config_t *)malloc(sizeof(shm_config_t));
+    FILE *file = fopen(config_file, "r");
+    if (file == NULL) {
+        LOG_ERROR("Unable to open config file: %s", config_file);
+        exit(1);
+    }
+
+    char line[256];
+    while (fgets(line, sizeof(line), file)) {
+        char key[20], value[20];
+        if (sscanf(line, "%s %s", key, value) == 2) {
+            if (strcmp(key, "max_conn") == 0) {
+                config->max_conn = atoi(value);
+            } else if (strcmp(key, "mode") == 0) {
+                if (strcmp(value, "client") == 0) {
+                    config->mode = SHM_MODE_CLIENT;
+                } else if (strcmp(value, "server") == 0) {
+                    config->mode = SHM_MODE_SERVER;
+                } else {
+                    fprintf(stderr, "Invalid mode: %s\n", value);
+                    exit(1);
+                }
+            } else if (strcmp(key, "shm_size") == 0) {
+                config->shm_size = parse_size(value);
+            }
+        }
+    }
+
+    fclose(file);
+
+    if (config->max_conn == 0 || (config->mode != SHM_MODE_CLIENT && config->mode != SHM_MODE_SERVER) || config->shm_size == 0) {
+        LOG_ERROR(__func__,"Incomplete or invalid config file");
+        exit(1);
+    }
+
+    return config;
+}
+
+void init_shm_names(shm_mode_t mode) {
+    if (mode == SHM_MODE_CLIENT) {
+        for (int i = 0; i < MAX_CONNECTIONS; i++) {
+            snprintf(shm_names[i], sizeof(shm_names[i]), "cli_socket_%d", i);
+        }
+    } else if (mode == SHM_MODE_SERVER) {
+        for (int i = 0; i < MAX_CONNECTIONS; i++) {
+            snprintf(shm_names[i], sizeof(shm_names[i]), "srv_socket_%d", i);
+        }
+    } else {
+        LOG_ERROR(__func__,"Error: Invalid mode");
+        exit(1);
+    }
+}
+
+static shm_global_t* shm_get_global() {
+    // Open shared memory object named "tctx"
+    /*int tctx_shm_fd = shm_open("tctx", O_RDWR, 0666);
+    if (tctx_shm_fd == -1) {
+        perror("shm_open for tctx");
+        return NULL;
+    }
+
+    // Map shared memory
+    void *tctx_ptr = mmap(NULL, sizeof(shm_global_t), PROT_READ | PROT_WRITE, MAP_SHARED, tctx_shm_fd, 0);
+    if (tctx_ptr == MAP_FAILED) {
+        perror("mmap for tctx");
+        close(tctx_shm_fd);
+        return NULL;
+    }
+
+    // Close file descriptor (shared memory remains mapped)
+    close(tctx_shm_fd);
+
+    // Point tctx to shared memory
+    tctx = (shm_global_t*)tctx_ptr;*/
+    return tctx;
+}
+
+void shm_init_global(shm_config_t config){
+    init_shm_names(config.mode);
+
+    tctx = (shm_global_t*)malloc(sizeof(shm_global_t));
+    for (int i = 0; i < config.max_conn; i++) {
+        tctx->connections.write_entries[i].fd = -1;
+        tctx->connections.write_entries[i].socket = NULL;
+        conn[i] = -1;
+    }
+    tctx->connections.count = 0;
+    tctx->total_conn = config.max_conn;
+    struct group *grp = getgrnam("openvpn");
+    if (grp == NULL) {
+        perror("getgrnam failed");
+        exit(1);
+    }
+    openvpn_gid = grp->gr_gid;
+    // 注册信号处理函数
+    signal(SIGINT, cleanup_shared_memory);
+    signal(SIGTERM, cleanup_shared_memory);
+}
+
+/**
+ * @brief This function is used to create a new socket in the shared memory.
+ * 
+ * @param domain The domain of the socket.
+ * @param shm_size The size of the shared memory.
+ * @param protocol The protocol of the socket.
+ * @return int The file descriptor of the new socket.
+ */
+int shm_socket(int domain, int shm_size, int protocol) {
+    // Open or create shared memory object
+    char name[30];
+    
+    snprintf(name, sizeof(name), "socket_%d", domain);
+
+    // Initialize shm_socket_t structure
+    shm_socket_t *s = alloc_new_sock(NULL);
+    
+    memcpy(s->name, name, sizeof(name));
+
+    void *buf_ptr = alloc_shared_memory(name, shm_size, s);
+    
+    if (buf_ptr == NULL) {
+        perror("shared memory mmap failed!\n");
+        return -1;
+    }
+
+    s->buffer.ptr = buf_ptr;
+    s->buffer.capacity = shm_size;
+
+    // Add new socket to global connection table
+    tctx->connections.write_entries[domain].fd = s->fd;
+    tctx->connections.write_entries[domain].socket = s;
+    //tctx->connections.count++;
+
+    return domain;
+}
+
+int shm_connect(int fd, const char *addr, socklen_t addrlen) {
+    // Get global structure
+    shm_global_t *global = shm_get_global();
+    if (global == NULL) {
+        perror("Failed to get global structure");
+        return -1;
+    }
+
+    // Check if fd is valid
+    if (fd < 0 || fd > global->total_conn) {
+        errno = EBADF;
+        return errno;
+    }
+
+    // Get corresponding socket
+    shm_socket_t *s = global->connections.write_entries[fd].socket;
+    if (s == NULL) {
+        errno = ENOTSOCK;
+        return errno;
+    }
+
+    // Check if address length is valid
+    if (addrlen > s->buffer.capacity) {
+        errno = EINVAL;
+        return errno;
+    }
+
+    // Set connection status to connecting
+    atomic_store(&s->status, 0);
+
+    // Write entire shm_socket_t structure to shared memory
+    ssize_t woff = s->buffer.write_offset;
+    s->buffer.write_offset += sizeof(shm_socket_t);
+    memcpy((char *)s->buffer.ptr + woff, s, sizeof(shm_socket_t));
+
+    printf("Alloc new socket %p of connection %d, share ptr is %p!\n", s, fd, s->buffer.ptr);
+
+    // Open shared memory created by server
+    // Construct server shared memory name
+    char srv_shm_name[32];
+    snprintf(srv_shm_name, sizeof(srv_shm_name), "socket_%d", 0);
+
+    void *srv_shm_ptr = read_shared_memory(srv_shm_name);
+
+    // First read backlog value
+    int *backlog_ptr = (int *)(srv_shm_ptr);
+    int backlog = *backlog_ptr;
+
+    // Get shm_socket_t structure
+    shm_socket_t *listen_socket = (shm_socket_t *)((char *)backlog_ptr + sizeof(int));
+
+    // After backlog and shm_socket_t structure, take out int length area to fill fd
+    int *fd_ptr = (int *)((char *)listen_socket + sizeof(shm_socket_t));
+    atomic_store(fd_ptr, fd);
+    
+    LOG_INFO(__func__,"Client fd %d has been written to client shared memory, backlog: %d\n", fd, backlog);
+
+    // Calculate position of conn array
+    int *conn = (int *)((char *)fd_ptr + sizeof(int));
+
+    // Check if there is still space to store new fd
+    if (backlog > 0) {
+        atomic_store(conn + fd, 0);
+        atomic_fetch_add(backlog_ptr, 1);
+    } else {
+        LOG_ERROR(__func__,"Warning: Server socket shared memory is full, unable to store new client connection status");
+    }
+    
+    // Set server socket status to new connection
+    atomic_store(&listen_socket->status, 0);
+    
+    LOG_INFO(__func__,"Server socket status set to new connection");
+
+    LOG_INFO(__func__,"conn %p 当前状态: %d", &conn, atomic_load(conn + fd));
+
+    // Wait for connection to be established
+    int timeout = 30000; // 30 seconds timeout
+    while (atomic_load(conn + fd) == 0 && timeout > 0) {
+        usleep(1000);  // Sleep for 1 millisecond
+        timeout--;
+    }
+
+    if (atomic_load(conn + fd) == 1) {
+        char srv_name[32];
+        snprintf(srv_name, sizeof(srv_name), "srv_buf_%d", fd);
+        void *read_ptr = read_shared_memory(srv_name);
+        shm_socket_t *new_socket = (shm_socket_t*)read_ptr;
+        if (new_socket == NULL) {
+            perror("Failed to create new socket");
+            return -1;
+        }
+        global->connections.read_entries[fd].fd = fd;
+        global->connections.read_entries[fd].socket = new_socket;
+        new_socket->buffer.read_offset = sizeof(shm_socket_t);
+        global->connections.count++;
+        LOG_INFO(__func__,"Connection successfully established");
+        return 0;
+    } else if (timeout == 0) {
+        errno = ETIMEDOUT;
+        LOG_INFO(__func__,"Connection timed out");
+        return errno;
+    } else {
+        errno = ECONNREFUSED;
+        LOG_INFO(__func__,"Connection refused");
+        return errno;
+    }
+}
+
+// ... existing code ...
+int shm_bind(int fd, const char *addr, socklen_t addrlen) {
+    // Store address information at the beginning of shared memory
+    shm_global_t *global = shm_get_global();
+    if (global == NULL) {
+        perror("Failed to get global structure");
+        return -1;
+    }
+
+    shm_socket_t *s = global->connections.write_entries[fd].socket;
+    if (s == NULL) {
+        errno = ENOTSOCK;
+        return -1;
+    }
+
+    if (addrlen > 256) {
+        return -1;  // Address is too long to store
+    }
+    
+    strncpy(s->name, addr, addrlen);
+    return 0;
+}
+
+int shm_listen(int fd, int backlog) {
+    // Store the backlog value in shared memory
+    // We assume bind() has been called, so we start writing after the global structure
+    // Get shm_global_t structure from "tctx"
+    shm_global_t *global = shm_get_global();
+    if (global == NULL) {
+        perror("Failed to get global structure");
+        return -1;
+    }
+    // Check if fd is valid
+    if (fd < 0 || fd > global->connections.count) {
+        errno = EBADF;
+        return errno;
+    }
+
+    // Get corresponding socket
+    shm_socket_t *s = global->connections.write_entries[fd].socket;
+    if (s == NULL) {
+        errno = ENOTSOCK;
+        return errno;
+    }
+
+    // Check backlog parameter
+    if (backlog < 0) {
+        errno = EINVAL;
+        return errno;
+    }
+
+    // Mark socket as passive
+    s->is_passive = true;
+
+    // Store backlog value in shared memory
+    if (sizeof(int) > s->buffer.capacity - s->buffer.write_offset) {
+        errno = ENOMEM;
+        return errno;  // Not enough space
+    }
+
+    *(int *)((char *)s->buffer.ptr + s->buffer.write_offset) = backlog;
+    s->buffer.write_offset += sizeof(int);
+
+    // Store s in shared memory
+    memcpy((char *)s->buffer.ptr + s->buffer.write_offset, s, sizeof(shm_socket_t));
+    s->buffer.write_offset += sizeof(shm_socket_t);
+
+    // Reserve int length in shared memory, initial value is -1
+    int reserved_value = -1;
+    if (sizeof(int) > s->buffer.capacity - s->buffer.write_offset) {
+        errno = ENOMEM;
+        return errno;  // Not enough space
+    }
+    memcpy((char *)s->buffer.ptr + s->buffer.write_offset, &reserved_value, sizeof(int));
+    s->buffer.write_offset += sizeof(int);
+
+    // Store conn array in shared memory
+    memcpy((char *)s->buffer.ptr + s->buffer.write_offset, conn, sizeof(conn));
+    s->buffer.write_offset += sizeof(conn);
+
+    // Update socket status to listening
+    atomic_store(&s->status, -1); 
+
+    LOG_INFO(__func__,"Socket %d is now listening with backlog %d", fd, backlog);
+
+    return 0;
+}
+
+int shm_accept(int fd, struct sockaddr *addr, socklen_t *addrlen) {
+    shm_global_t *global = shm_get_global();
+    if (global == NULL) {
+        perror("Failed to get global structure");
+        return -1;
+    }
+
+    // Check if fd is valid
+    if (fd < 0 || fd > global->connections.count) {
+        errno = EBADF;
+        LOG_ERROR(__func__,"Error: Invalid file descriptor %d. Error code: %d", fd, errno);
+        return -1;
+    }
+
+    // Get corresponding listening socket
+    shm_socket_t *listen_socket = global->connections.write_entries[fd].socket;
+    if (listen_socket == NULL || !listen_socket->is_passive) {
+        LOG_ERROR(__func__,"Error: Invalid listen socket %p. Error code: %d", listen_socket, errno);
+        errno = EINVAL;
+        return -1;
+    }
+
+    int *backlog_ptr = (int *)listen_socket->buffer.ptr;
+    shm_socket_t *socket_ptr = (shm_socket_t *)((char *)backlog_ptr + sizeof(int));
+    // Block and wait for connection request
+    while (atomic_load(&socket_ptr->status) < 0) {
+        LOG_DEBUG(__func__,"Global listen_socket %p 当前名称: %s", global->connections.write_entries[0].socket, listen_socket->name);
+        LOG_DEBUG(__func__,"listen_socket %p 当前状态: %d", &socket_ptr, atomic_load(&socket_ptr->status));
+        sleep(1);
+        //usleep(1000);  // Sleep for 1 millisecond to avoid busy waiting
+    }
+
+    int new_fd = -1;
+
+    if (atomic_load(&socket_ptr->status) == 0) {
+        LOG_INFO(__func__,"New connection arrived, processing...\n");
+        // Read fd value from listen_socket
+        int *fd_ptr = (int *)((char *)socket_ptr + sizeof(shm_socket_t));
+
+        new_fd = atomic_load(fd_ptr);
+
+        // Construct client shared memory name based on new_fd
+        char cli_shm_name[32];
+        snprintf(cli_shm_name, sizeof(cli_shm_name), "socket_%d", new_fd);
+
+        void *cli_shm_ptr = read_shm(cli_shm_name);
+
+        // Create new socket for accepting connection
+        shm_socket_t *new_socket = (shm_socket_t *)cli_shm_ptr;
+        // Update read offset in the socket structure
+        new_socket->buffer.read_offset = (new_socket->buffer.read_offset + sizeof(shm_socket_t)) % new_socket->buffer.capacity;
+        if (new_socket == NULL) {
+            perror("Failed to create new socket");
+            return -1;
+        }
+
+        //shm_socket_t *new_socket = global->connections.entries[new_fd].socket;
+
+        // If addr is not NULL, fill in client address information
+        /*if (addr != NULL && addrlen != NULL) {
+            socklen_t len = *addrlen < listen_socket->buffer.write_offset ? *addrlen : listen_socket->buffer.write_offset;
+            memcpy(addr, (char *)listen_socket->buffer.ptr + sizeof(shm_global_t), len);
+            *addrlen = len;
+        }*/
+
+        // Add new socket to global connection table
+        if (global->connections.count < global->total_conn) {
+            //global->connections.entries[new_fd].fd = new_fd;
+            global->connections.read_entries[new_fd].socket = new_socket;
+
+            char srv_name[32];
+            shm_socket_t *srv_socket = alloc_new_sock(NULL);
+            snprintf(srv_name, sizeof(srv_name), "srv_buf_%d", new_fd);
+            size_t srv_wbuf_size = parse_size("20m");
+            srv_socket->buffer.ptr = alloc_shared_memory(srv_name, srv_wbuf_size, NULL);
+            srv_socket->fd = new_fd;
+            srv_socket->buffer.capacity = srv_wbuf_size;
+            srv_socket->buffer.write_offset += sizeof(shm_socket_t);
+            memcpy(srv_socket->buffer.ptr, srv_socket, sizeof(shm_socket_t));
+
+            global->connections.write_entries[new_fd].socket = srv_socket;
+
+            global->connections.count++;
+            // Take out conn array from buffer_ptr
+            int *conn = (int *)((char *)fd_ptr + sizeof(int));
+            // Set value at index new_fd to 1
+            atomic_store(conn + new_fd, 1);
+            atomic_store(&new_socket->status, 1);
+            // Decrease backlog value by 1
+            atomic_fetch_sub(backlog_ptr, 1);
+            LOG_DETAIL(__func__, "conn %p 当前状态: %d", &conn, atomic_load(conn + new_fd));
+            LOG_INFO(__func__, "New connection accepted, read socket=%p, write socket=%p, fd = %d, read = %zu, write = %zu.", 
+                global->connections.read_entries[new_fd].socket, 
+                global->connections.write_entries[new_fd].socket, 
+                new_fd, 
+                new_socket->buffer.read_offset, 
+                new_socket->buffer.write_offset);
+        } else {
+            LOG_ERROR(__func__, "Warning: Maximum number of connections reached");
+            shm_close(new_socket->fd);
+            return -1;
+        }
+
+    }
+    // Reset listening socket status
+    atomic_store(&socket_ptr->status, -1);  // Assume -1 means ready to accept new connections
+    return new_fd;
+}
+
+// Modify other functions to use the new structure
+ssize_t shm_read(int fd, void *buf, size_t count) {
+    shm_global_t *global = shm_get_global();
+    if (fd <= 0 || fd > global->connections.count) {
+        return -1; 
+    }
+
+    size_t available = 0;
+
+    shm_socket_t *target_socket = NULL;
+
+    size_t write_offset = 0;
+    size_t read_offset = 0;
+
+    time_t start_time = time(NULL);
+    while(available == 0){
+        target_socket = atomic_load_explicit(&global->connections.read_entries[fd].socket, memory_order_acquire);
+
+        write_offset = atomic_load_explicit(&target_socket->buffer.write_offset, memory_order_acquire);
+        read_offset = atomic_load_explicit(&target_socket->buffer.read_offset, memory_order_acquire);
+
+        available = (write_offset - read_offset + target_socket->buffer.capacity) % target_socket->buffer.capacity;
+
+        if(time(NULL) - start_time > 10){
+            LOG_ERROR(__func__, "read timeout, available is %zu", available);
+            break;
+        }
+    }
+
+    if (count > available) {
+        count = available;
+    }
+
+    char *writv_buf = ((char *)target_socket + target_socket->buffer.read_offset);
+
+    LOG_DEBUG(__func__, "read_offset: %zu, write_offset: %zu, want %zu bytes, writv_buf: %p, buf: %p", target_socket->buffer.read_offset, target_socket->buffer.write_offset, count, writv_buf, buf);
+
+    LOG_DETAIL(__func__,"Before read request buffer %p is %s in shm, read_offset is %zu, write_offset is %zu.\n", target_socket, (char *)target_socket + 80, target_socket->buffer.read_offset, target_socket->buffer.write_offset);
+    
+    if (target_socket->buffer.read_offset + count >= target_socket->buffer.capacity) {
+        size_t first_part = target_socket->buffer.capacity - target_socket->buffer.read_offset;
+        memcpy(buf, writv_buf, first_part);
+        char *head_buf = ((char *)target_socket + sizeof(shm_socket_t));
+        memcpy((char*)buf + first_part, head_buf, count - first_part);
+        read_offset = (read_offset + count) % target_socket->buffer.capacity + sizeof(shm_socket_t);
+    } else {
+        memcpy(buf, writv_buf, count);
+        read_offset = (read_offset + count) % target_socket->buffer.capacity;
+    }
+    atomic_store_explicit(&target_socket->buffer.read_offset, read_offset, memory_order_release);
+    
+    __sync_synchronize();
+
+    LOG_DETAIL(__func__,"Connection %d buffer %p read request %s into shm, read_offset is %zu, write_offset is %zu.\n", fd, writv_buf, writv_buf, target_socket->buffer.read_offset, write_offset);
+    return count; 
+}
+
+
+ssize_t shm_write(int fd, const void *buf, size_t count) {
+    shm_global_t *global = shm_get_global();
+    if (fd <= 0 || fd > global->connections.count) {
+        LOG_ERROR(__func__, "fd is %d, total count is %d\n", fd, global->connections.count);
+        return -1; 
+    }
+
+    shm_socket_t *s = atomic_load_explicit(&global->connections.write_entries[fd].socket, memory_order_acquire) ;
+    if(s == NULL){
+        LOG_ERROR(__func__, "shm_socket_t %d pointer is NULL\n", fd);
+        return -1;
+    }
+
+    void *ptr = atomic_load_explicit(&s->buffer.ptr, memory_order_acquire);
+    shm_socket_t *shm_socket_ptr = (shm_socket_t *)ptr;
+    if(shm_socket_ptr == NULL){
+        LOG_ERROR(__func__, "shm_socket_t %d shm pointer is NULL\n", fd);
+        return -1;
+    }
+    s->buffer.read_offset = atomic_load_explicit(&shm_socket_ptr->buffer.read_offset, memory_order_acquire);
+    
+    size_t available = s->buffer.capacity - ((s->buffer.write_offset - s->buffer.read_offset + s->buffer.capacity) % s->buffer.capacity) - 1;
+    
+    if (count > available) {
+        if (available == 0) {
+            return -2; // 返回-2，表示缓冲区已满，需要等待
+        }
+        count = available;
+    }
+    ssize_t woff = s->buffer.write_offset;
+
+    LOG_DETAIL(__func__,"Before write response buffer is %s in shm, read_offset is %zu, write_offset is %zu.\n", (char*)(s->buffer.ptr), s->buffer.read_offset, s->buffer.write_offset);
+
+    if (woff + count >= s->buffer.capacity) {
+        size_t first_part = s->buffer.capacity - s->buffer.write_offset;
+        memcpy(s->buffer.ptr + woff, buf, first_part);
+        memcpy(s->buffer.ptr + sizeof(shm_socket_t), (char*)buf + first_part, count - first_part);
+        woff = (woff + count) % s->buffer.capacity + sizeof(shm_socket_t);
+    } else {
+        memcpy(s->buffer.ptr + woff, buf, count);
+        woff = (woff + count) % s->buffer.capacity;
+    }
+    s->buffer.write_offset = woff;
+    atomic_store_explicit(&shm_socket_ptr->buffer.write_offset, woff, memory_order_release);
+
+    // Sync the written data to ensure it is visible to other processes
+    /*if (msync(s->buffer.ptr, s->buffer.capacity, MS_SYNC) == -1) {
+        perror("msync failed");
+        return -1;
+    }*/
+    __sync_synchronize();
+    
+    LOG_DEBUG(__func__,"Connection %d buffer %p write request %s into shm, read_offset is %zu, write_offset is %zu.\n", fd, s->buffer.ptr + woff, (char*)(s->buffer.ptr + woff), s->buffer.read_offset, s->buffer.write_offset);
+    return count;
+}
+
+int shm_close(int fd) {
+    shm_global_t *global = shm_get_global();
+    if (fd <= 0 || fd > global->connections.count) {
+        return -1; 
+    }
+
+    shm_socket_t *s = global->connections.write_entries[fd].socket;
+    if(s){
+        atomic_store(&s->status, -2);
+        
+        for (int i = fd; i < global->connections.count; i++) {
+            global->connections.write_entries[i] = global->connections.write_entries[i + 1];
+        }
+        global->connections.count--;
+
+        munmap(s->buffer.ptr, s->buffer.capacity);
+        close(s->fd);
+        shm_unlink(s->name);
+        free(s);
+    }
+    return 0;
+}

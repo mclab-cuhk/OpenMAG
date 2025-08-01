@@ -1,0 +1,5 @@
+server_ip=20.1.1.200
+port=9000
+packet_length=1024
+test_duration=120
+conn_num=1
