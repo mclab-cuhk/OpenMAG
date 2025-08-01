@@ -4,3 +4,7 @@
 [submodule "openvpn"]
 	path = openvpn
 	url = git@github.com:OpenVPN/openvpn.git
+[submodule "mvfst"]
+	path = mvfst
+	url = git@github.com:beide123/mvfst.git
+	branch = multipath
