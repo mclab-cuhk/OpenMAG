@@ -3,7 +3,7 @@
 	url = git@github.com:multipath-tcp/mptcp_net-next.git
 [submodule "openvpn"]
 	path = openvpn
-	url = git@github.com:OpenVPN/openvpn.git
+	url = git@github.com:beide123/openvpn.git
 [submodule "mvfst"]
 	path = mvfst
 	url = git@github.com:beide123/mvfst.git
