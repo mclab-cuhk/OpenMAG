@@ -265,7 +265,7 @@ nload -m
 ```
 
 
-**Topology Example 2:**
+# Topology Example 2:
 
 Openvpn connects to mvfst(with multi-connection and self-define scheduler) through shm
 
@@ -280,7 +280,7 @@ Openvpn connects to mvfst(with multi-connection and self-define scheduler) throu
      ```bash
      sudo apt update && sudo apt install -y git cmake g++ libboost-all-dev libevent-dev libssl-dev libdouble-conversion-dev libgtest-dev libgmock-dev
      ```
-2. ** Set the shared memory (`shm`) support path
+2. **Set the shared memory (`shm`) support path**：
    - Use the example of unix_shm:
      ```bash
      cd quic/unix_shm/opvshm
@@ -315,5 +315,61 @@ Openvpn connects to mvfst(with multi-connection and self-define scheduler) throu
 
 6. **Find the apps**:
    - All the apps finishing compiling can be found under _build/build/quic/
+
+### OpenVPN installation
+
+This process is the same as before.
+
+## Configuration
+
+1. **Add user group and users**:
+
+    - We must set user group as openvpn at both of the local gw and remote gw machines.
+     ```bash
+     groupadd openvpn
+     usermod -a -G openvpn root
+     usermod -a -G openvpn nobody
+     ```
+
+## Run
+
+1. **Firstly run the openvpn server on the local gw**:
+
+    - you can use and modify the script opv_srv.sh.
+     ```bash
+     git branch shm_fork
+     cd src/openvpn
+     ./opv_srv.sh
+     ```
+
+2. **Secondly run the mvfst server on the local gw**:
+   - you can use and modify the script srv_up.sh.
+     ```bash
+     cp quic/unix_shm/opvshm/srv_up.sh
+     cd _build/build/quic/unix_shm/
+     ./srv_up.sh
+     ```
+
+3. **Run the mvfst client on the remote gw**:
+   - you can use and modify the script cli_up.sh.
+     ```bash
+     cp quic/unix_shm/opvshm/cli_up.sh
+     cd _build/build/quic/unix_shm/
+     ./cli_up.sh
+     ```
+
+4.  **Run the openvpn client on the remote gw**:
+   - you can use and modify the script cli_up.sh.
+     ```bash
+     git branch shm_fork
+     cd src/openvpn
+     ./opv_cli.sh
+     ```
+
+
+
+
+
+
 
 
