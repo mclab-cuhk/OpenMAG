@@ -15,7 +15,7 @@ We need four machines to set up the testbed:
 - Remote GW (Gateway) : at least have a single WAN interface
 - Server : at better the `apache2` service installed and running, with files available for download under the `/var/www/html/` directory.
 
-**Topology Example:**
+**Topology Example 1:**
 
 Below is a visual representation of the network topology:
 
@@ -263,4 +263,57 @@ Use nload tool to show the multipath traffic from two interfaces
 ```bash
 nload -m
 ```
+
+
+**Topology Example 2:**
+
+Openvpn connects to mvfst(with multi-connection and self-define scheduler) through shm
+
+## Installation
+
+### mvfst installation (Using `build_helper.sh`)
+
+1. **Prerequisites**:
+   - Ensure you have the following dependencies installed:
+     - `git`, `cmake`, `g++11` , `libboost-all-dev`, `libevent-dev`, `libssl-dev`, `libdouble-conversion-dev`, `libgtest-dev`, `libgmock-dev`.
+   - For Ubuntu/Debian, run:
+     ```bash
+     sudo apt update && sudo apt install -y git cmake g++ libboost-all-dev libevent-dev libssl-dev libdouble-conversion-dev libgtest-dev libgmock-dev
+     ```
+2. ** Set the shared memory (`shm`) support path
+   - Use the example of unix_shm:
+     ```bash
+     cd quic/unix_shm/opvshm
+     vim CMakeLists.txt
+        set(SHM_INCLUDE_DIR your_path/shm/include)
+        set(SHM_LIBRARIES your_path/shm/shm/lib)
+     ```
+   - Other examples can also add shm supprot like this example
+
+3. **Run `build_helper.sh`**:
+   - Execute the build script to compile and install `mvfst`:
+     ```bash
+     ./build_helper.sh
+     ```
+   - This script automates:
+     - Dependency checks.
+     - Configuration with `cmake`.
+     - Compilation and installation.
+
+4. **Verify Installation**:
+   - After successful installation, verify by running:
+     ```bash
+     ./_build/build/mvfst/bin/echo_server --help
+     ```
+   - Ensure the `echo_server` binary is executable and displays usage instructions.
+
+5. **Optional: Custom Build Flags**:
+   - To customize the build (e.g., debug mode or specific compiler flags), modify `build_helper.sh` or pass arguments to `cmake`:
+     ```bash
+     ./build_helper.sh -DCMAKE_BUILD_TYPE=Debug
+     ```
+
+6. **Find the apps**:
+   - All the apps finishing compiling can be found under _build/build/quic/
+
 

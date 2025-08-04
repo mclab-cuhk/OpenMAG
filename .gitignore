@@ -64,11 +64,6 @@ tests/unit_tests/**/*_testdriver
 
 shm/shm/build
 
-mvfst/_build
-mvst/.vscode
-mvfst/build/.cmake
-mvfst/build/CMake*
-
 src/openvpn/openvpn
 include/openvpn-plugin.h
 config-version.h
